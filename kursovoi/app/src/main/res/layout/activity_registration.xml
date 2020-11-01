@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".Registration">
+
+
+    <TextView
+        android:id="@+id/textForOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/IconImageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="146dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="147dp"
+        android:fontFamily="@font/nunito_sans_bold_italic"
+        android:text="Регистрация"
+        android:textColor="@color/WhiteApp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/IconImageView"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="175dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="176dp"
+        android:src="@drawable/app_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textForOne" />
+
+    <TableLayout
+        android:id="@+id/tableLayoutRegistrationActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/IconImageView">
+
+        <TableRow>
+
+
+            <LinearLayout
+                android:id="@+id/linearLoginRegistrationActivity"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.6"
+                android:background="@drawable/linear_border_radius"
+                android:orientation="vertical"
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/nunito_sans_bold_italic"
+                    android:text="Логин"
+                    android:textColor="@color/HintColor"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/editTextLoginRegistrationActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#00000000"
+                    android:ems="10"
+                    android:fontFamily="@font/nunito_sans"
+                    android:hint="JohnStar123"
+                    android:inputType="text"
+                    android:textColor="@color/colorBackground"
+                    android:textColorHint="@color/colorBackground" />
+
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow>
+
+            <LinearLayout
+                android:id="@+id/linearEmailRegistrationActivity"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/linear_border_radius"
+                android:orientation="vertical"
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/nunito_sans_bold_italic"
+                    android:text="Почта"
+                    android:textColor="@color/HintColor"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/editTextEmailRegistrationActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#00000000"
+                    android:ems="10"
+                    android:fontFamily="@font/nunito_sans"
+                    android:hint="johnstart123@gmail.com"
+                    android:inputType="text"
+                    android:textColor="@color/colorBackground"
+                    android:textColorHint="@color/colorBackground" />
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow>
+
+            <LinearLayout
+                android:id="@+id/linearPasswordRegistrationActivity"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/linear_border_radius"
+                android:orientation="vertical"
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/nunito_sans_bold_italic"
+                    android:text="Пароль"
+                    android:textColor="@color/HintColor"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/editTextPasswordRegistrationActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#00000000"
+                    android:ems="10"
+                    android:fontFamily="@font/nunito_sans"
+                    android:hint="Введите ваш пароль"
+                    android:inputType="textPassword"
+                    android:textColor="@color/colorBackground"
+                    android:textColorHint="@color/colorBackground" />
+                <Switch
+                    android:id="@+id/switchShowPasswordRegistrationActivity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:backgroundTint="@color/HintColor"
+                    android:fontFamily="@font/nunito_sans_bold_italic"
+                    android:shadowColor="@color/HintColor"
+                    android:text="Показать пароль"
+                    android:textColor="@color/HintColor"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tableLayoutRegistrationActivity" />
+            </LinearLayout>
+        </TableRow>
+        <TableRow>
+
+            <LinearLayout
+                android:id="@+id/linearFingerRegistrationActivity"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/linear_border_radius"
+                android:orientation="vertical"
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/nunito_sans_bold_italic"
+                    android:text="Отпечаток пальца"
+                    android:textColor="@color/HintColor"
+                    android:textSize="15dp" />
+
+                <CheckBox
+                    android:id="@+id/checkBox2"
+                    android:layout_width="match_parent"
+                    android:onClick="onCheckboxClicked"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/HintColor"
+                    android:shadowColor="@color/HintColor"
+                    android:fontFamily="@font/nunito_sans_bold_italic"
+                    android:textColor="@color/colorBackground"
+                    android:textSize="15dp"
+                    android:text="Я хочу добавить отпечаток пальца" />
+
+
+            </LinearLayout>
+        </TableRow>
+    </TableLayout>
+
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/linear_border_radius"
+        android:fontFamily="@font/nunito_sans_bold_italic"
+        android:text="Регистрация"
+        android:textAllCaps="false"
+        android:textColor="@color/colorBackground"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayoutRegistrationActivity" />
+    <!--
+        <LinearLayout
+            android:id="@+id/LinearRegistration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textForOne"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="37dp"
+            tools:layout_editor_absoluteY="239dp">
+
+            <EditText
+                android:id="@+id/loginUserEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/MarginEditTextRegistration"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="@dimen/MarginEditTextRegistration"
+                android:hint="Логин"
+                android:textColor="@color/colorTextView"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/mailUserEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/MarginEditTextRegistration"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="@dimen/MarginEditTextRegistration"
+                android:hint="Почта"
+                android:textColor="@color/colorTextView"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/passwordUserEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/MarginEditTextRegistration"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="@dimen/MarginEditTextRegistration"
+                android:hint="Пароль"
+                android:inputType="textPassword"
+                android:textColor="@color/colorTextView"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <Switch
+            android:id="@+id/switchShowPasswordRegistrationActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_sans"
+            android:shadowColor="@color/LightBlueApp"
+            android:text="Show password"
+            android:textColor="@color/WhiteApp"
+            tools:layout_editor_absoluteX="130dp"
+            tools:layout_editor_absoluteY="590dp" />
+
+        <Button
+            android:id="@+id/registerButton"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_below="@+id/LinearRegistration"
+            android:background="@drawable/button_drawable"
+            android:text="Регистрация"
+            android:textAllCaps="false"
+            android:textColor="@color/btnColor"
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="30dp"
+            tools:layout_editor_absoluteY="485dp" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
