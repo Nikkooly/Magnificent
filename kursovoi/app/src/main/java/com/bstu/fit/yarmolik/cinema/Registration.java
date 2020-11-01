@@ -98,7 +98,6 @@ public class Registration extends AppCompatActivity {
         getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_registration);
         init();
-
         showPasswordSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -199,6 +198,12 @@ public class Registration extends AppCompatActivity {
                 Toast.makeText(Registration.this,"Failed",Toast.LENGTH_SHORT).show();
             }
         });
+        if(CheckFingerPrintCompatibility.checkFingerprintCompatibility(this)){
+
+        }
+        else{
+
+        }
     }
 
     @Override
