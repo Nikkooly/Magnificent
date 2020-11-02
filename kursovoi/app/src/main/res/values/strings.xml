@@ -21,4 +21,16 @@
     <string name="emailEditTextRegistration">example@gmail.com</string>
     <string name="passwordEditTextRegistration">Введите ваш пароль</string>
     <string name="confirmButtonRegistration">Регистрация</string>
+    <string name="citationTextViewRegistration">Фильм – это жизнь, с которой вывели пятна скуки.</string>
+    <string name="citationAuthorTextViewRegistration">Алфред Хичкок</string>
+    <!--Login activity-->
+    <string name="AppName">Magnificent</string>
+    <string name="welcomeTextViewLogin">С Возвращением</string>
+    <string name="newFilmsTextViewLogin">Новые фильмы ждут вас!</string>
+    <string name="loginTextViewLogin">Логин</string>
+    <string name="passwordTextViewLogin">Пароль</string>
+    <string name="confirmRegistrationButtonLogin">Регистрация</string>
+    <string name="stayBackSwitchLogin">Не выходить</string>
+    <string name="enterButtonLogin">Войти</string>
+    <string name="skipButtonLogin">Пропустить</string>
 </resources>

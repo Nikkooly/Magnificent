@@ -214,6 +214,11 @@ public class Registration extends AppCompatActivity {
         super.onStop();
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+    }
 
     public static String md5(final String s) {
         final String MD5 = "MD5";
