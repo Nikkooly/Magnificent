@@ -17,8 +17,8 @@
     <string name="emailTextViewRegistration">Почта</string>
     <string name="passwordTextViewRegistration">Пароль</string>
     <string name="showPasswordSwitchRegistration">Показать пароль</string>
-    <string name="loginEditTextRegistration">Login123</string>
-    <string name="emailEditTextRegistration">login123@gmail.com</string>
+    <string name="loginEditTextRegistration">Example123</string>
+    <string name="emailEditTextRegistration">example@gmail.com</string>
     <string name="passwordEditTextRegistration">Введите ваш пароль</string>
     <string name="confirmButtonRegistration">Регистрация</string>
 </resources>

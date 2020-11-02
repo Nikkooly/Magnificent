@@ -33,7 +33,7 @@
         android:layout_marginTop="15dp"
         android:layout_marginEnd="25dp"
         android:fontFamily="@font/nunito_sans_italic"
-        android:text="Фильм – это жизнь, с которой вывели пятна скуки. Алфред Хичкок"
+        android:text="Фильм – это жизнь, с которой вывели пятна скуки."
         android:textColor="@color/colorAccent"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,7 +63,7 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textview50"
+        app:layout_constraintTop_toBottomOf="@+id/textView41"
         tools:ignore="MissingConstraints">
 
         <TextView
@@ -85,8 +85,8 @@
             android:fontFamily="@font/nunito_sans"
             android:hint="@string/loginEditTextRegistration"
             android:inputType="text"
-            android:textColor="@color/colorTextView"
-            android:textColorHint="@color/colorAccent" />
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/HintColorText" />
 
     </LinearLayout>
 
@@ -125,8 +125,8 @@
             android:fontFamily="@font/nunito_sans"
             android:hint="@string/emailEditTextRegistration"
             android:inputType="text"
-            android:textColor="@color/colorTextView"
-            android:textColorHint="@color/colorAccent" />
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/HintColorText" />
     </LinearLayout>
 
     <LinearLayout
@@ -163,8 +163,8 @@
             android:fontFamily="@font/nunito_sans"
             android:hint="@string/passwordEditTextRegistration"
             android:inputType="textPassword"
-            android:textColor="@color/colorTextView"
-            android:textColorHint="@color/colorAccent" />
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/HintColorText" />
 
         <Switch
             android:id="@+id/switchShowPasswordRegistrationActivity"
@@ -199,6 +199,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearPasswordRegistrationActivity" />
+
+    <TextView
+        android:id="@+id/textView41"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:text="Алфред Хичкок"
+        android:fontFamily="@font/nunito_sans_italic"
+        android:textColor="@color/colorAccent"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textview50" />
 
     <!-- <TableLayout
          android:id="@+id/tableLayoutRegistrationActivity"
