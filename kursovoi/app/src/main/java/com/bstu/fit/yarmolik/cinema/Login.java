@@ -272,6 +272,7 @@ public class Login extends AppCompatActivity {
             getGuestInfo(3);
             intent = new Intent(Login.this, MainActivity.class);
             startActivity(intent);
+            this.overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
             clear();
         }
         else{
@@ -282,6 +283,7 @@ public class Login extends AppCompatActivity {
         if(stateInternet) {
             Intent intent = new Intent(this, Registration.class);
             startActivity(intent);
+            this.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         }
         else{
             Toast.makeText(Login.this, "Регистрация в оффлайн-режиме не доступна! ", Toast.LENGTH_SHORT).show();

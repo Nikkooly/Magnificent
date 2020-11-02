@@ -16,14 +16,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Fragments.ReviewActivity"></activity>
-        <activity android:name=".Fragments.UserTicketActivity" />
-        <activity android:name=".Fragments.TicketInfo" />
-        <activity android:name=".Fragments.SelectTickets" />
-        <activity android:name=".Fragments.AddInfoTicket" />
-        <activity android:name=".Manager.ManagerActivity" />
-        <activity android:name=".Registration" />
-        <activity android:name=".Login">
+        <activity
+            android:name=".Fragments.ReviewActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".Fragments.UserTicketActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Fragments.TicketInfo"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Fragments.SelectTickets"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Fragments.AddInfoTicket"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Manager.ManagerActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Registration"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Login"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

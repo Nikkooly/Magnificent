@@ -140,6 +140,7 @@ public class Registration extends AppCompatActivity {
                                     dbHelper.insertUserData(s,login.getText().toString(),email.getText().toString(),md5(password.getText().toString()));
                                     intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                                     startActivity(intent);
+                                    overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
                                 }
                             }, throwable -> {
                                 alertDialog.dismiss();
