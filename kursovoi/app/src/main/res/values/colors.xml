@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#B9BBBD</color>
+    <color name="colorAccent">#2b2a2a</color>
     <color name="colorBackground">#18DDFF</color>
     <color name="colorSplashText">#F0F0F0</color>
     <color name="colorProgressBar">#ff0000</color>
@@ -17,5 +17,6 @@
     <color name="WhiteApp">#ffffff</color>
     <color name="InputBackgroundApp">#ffffff</color>
     <color name="lightGray">#d3d3d3</color>
-    <color name="HintColor">#773deb</color>
+    <color name="HintColor">#18DDFF</color>
+    <color name="HintColorText">#B9BBBD</color>
 </resources>

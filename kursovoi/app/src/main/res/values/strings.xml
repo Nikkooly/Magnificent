@@ -12,11 +12,13 @@
     <string name="login_error">Username can not be empty</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="authenticate_fingerprint">Ошибка аутентификации по отпечатку</string>
-    <string name="auth_successful">Успешная аутентификация по отпечатку</string>
-    <string name="Unknown_permission_request">Unrecognized permission request</string>
-    <string name="permission_refused">"User refused Fingerprint permission"</string>
-    <string name="with_fingerprint">Использовать отпечаток пальца</string>
-    <string name="with_fingerprint_and_password">Использовать отпечаток пальца и пароль</string>
-
+<!--Registration activity-->
+    <string name="loginTextViewRegistration">Логин</string>
+    <string name="emailTextViewRegistration">Почта</string>
+    <string name="passwordTextViewRegistration">Пароль</string>
+    <string name="showPasswordSwitchRegistration">Показать пароль</string>
+    <string name="loginEditTextRegistration">Example123</string>
+    <string name="emailEditTextRegistration">example@gmail.com</string>
+    <string name="passwordEditTextRegistration">Введите ваш пароль</string>
+    <string name="confirmButtonRegistration">Регистрация</string>
 </resources>

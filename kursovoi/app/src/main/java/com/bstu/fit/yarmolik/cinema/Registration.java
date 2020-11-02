@@ -84,7 +84,7 @@ public class Registration extends AppCompatActivity {
     private Switch showPasswordSwitch;
     private  UserData user;
     private Executor executor;
-    private CheckBox fingerCheck;
+   // private CheckBox fingerCheck;
     private BiometricPrompt biometricPrompt;
     private BiometricPrompt.PromptInfo promptInfo;
 
@@ -156,7 +156,7 @@ public class Registration extends AppCompatActivity {
             }
         });
     }
-    public void onCheckboxClicked(View view) {
+    /*public void onCheckboxClicked(View view) {
 
         if(fingerCheck.isChecked()){
             promptInfo = new BiometricPrompt.PromptInfo.Builder()
@@ -166,14 +166,14 @@ public class Registration extends AppCompatActivity {
                     .build();
             biometricPrompt.authenticate(promptInfo);
         }
-    }
+    }*/
     public void init() {
         login = findViewById(R.id.editTextLoginRegistrationActivity);
         email = findViewById(R.id.editTextEmailRegistrationActivity);
         password = findViewById(R.id.editTextPasswordRegistrationActivity);
         register = findViewById(R.id.registerButton);
         showPasswordSwitch=findViewById(R.id.switchShowPasswordRegistrationActivity);
-        fingerCheck = findViewById(R.id.checkBox2);
+        //fingerCheck = findViewById(R.id.checkBox2);
         compositeDisposable = new CompositeDisposable();
         dbHelper = new DbHelper(this, "project.db", null, 1);
         dbHelper.getWritableDatabase();

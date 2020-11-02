@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
     tools:context=".Login">
-
-    <ImageView
+    <!--android:background="@color/colorBackground"-->
+   <ImageView
         android:id="@+id/bookIconImageView"
         android:layout_width="60dp"
         android:layout_height="60dp"
@@ -40,7 +40,7 @@
             android:id="@+id/WelcomeTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/welcome_back"
+            android:text="С возвращением"
             android:textColor="@color/colorBackground"
             android:textSize="25sp"
             android:textStyle="bold" />
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/WelcomeTextView"
             android:layout_marginTop="10dp"
-            android:text="@string/read_it_together"
+            android:text="Новые фильмы ждут вас!"
             android:textColor="@color/colorAccent"
             android:textSize="15sp" />
 
@@ -67,9 +67,9 @@
                 android:id="@+id/loginEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/login"
-                android:textColor="@color/colorTextView"
-                android:textColorHint="@color/colorAccent"
+                android:hint="Логин"
+                android:textColor="@color/colorAccent"
+                android:textColorHint="@color/HintColorText"
                 android:textSize="15sp" />
 
             <EditText
@@ -77,10 +77,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
-                android:hint="@string/password"
+                android:hint="Пароль"
                 android:inputType="textPassword"
-                android:textColor="@color/colorTextView"
-                android:textColorHint="@color/colorAccent"
+                android:textColor="@color/colorAccent"
+                android:textColorHint="@color/HintColorText"
                 android:textSize="15sp" />
 
             <FrameLayout
@@ -91,11 +91,13 @@
 
                 <Button
                     android:id="@+id/signUp"
-                    android:layout_width="70dp"
+                    android:layout_width="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
                     android:layout_height="25dp"
                     android:layout_marginBottom="5dp"
                     android:background="@drawable/button_drawable"
-                    android:text="Sign up"
+                    android:text="Регистрация"
                     android:onClick="SignUp"
                     android:textAllCaps="false"
                     android:textColor="@color/btnColor"
@@ -120,7 +122,7 @@
             android:layout_above="@+id/skipButton"
             android:layout_marginBottom="5dp"
             android:background="@drawable/button_drawable"
-            android:text="@string/login"
+            android:text="Войти"
             android:textAllCaps="false"
             android:textColor="@color/btnColor"
             android:textSize="16sp" />
@@ -130,15 +132,15 @@
             android:id="@+id/skipButton"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
-            android:text="Skip"
+            android:text="Пропустить"
             android:focusable="true"
             android:gravity="center"
             android:padding="12dp"
             android:onClick="Skip"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="10dp"
-            android:textSize="15sp"
-            android:textColor="@color/colorTextView"
+            android:textSize="11sp"
+            android:textColor="@color/colorAccent"
             android:layout_height="wrap_content" />
 
     </RelativeLayout>
