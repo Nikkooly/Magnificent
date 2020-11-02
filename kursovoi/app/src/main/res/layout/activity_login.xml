@@ -40,7 +40,7 @@
             android:id="@+id/WelcomeTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/welcome_back"
+            android:text="С возвращением"
             android:textColor="@color/colorBackground"
             android:textSize="25sp"
             android:textStyle="bold" />
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/WelcomeTextView"
             android:layout_marginTop="10dp"
-            android:text="@string/read_it_together"
+            android:text="Новые фильмы ждут"
             android:textColor="@color/colorAccent"
             android:textSize="15sp" />
 
