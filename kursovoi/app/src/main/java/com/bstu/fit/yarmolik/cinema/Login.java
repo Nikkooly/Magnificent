@@ -12,20 +12,24 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.view.ViewPropertyAnimator;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
@@ -59,12 +63,12 @@ import static android.view.View.VISIBLE;
 public class Login extends AppCompatActivity {
 
     private ImageView bookIconImageView;
-    private TextView bookITextView;
+    private TextView bookITextView,noAccount;
     private EditText login,password;
     private Button btn_login;
     String response="";
     public boolean stateInternet;
-    private RelativeLayout rootView, afterAnimationView;
+    private ConstraintLayout rootView, afterAnimationView;
     private IMyApi iMyApi;
     private SharedPreferences sharedPreferences;
     public static Integer userRoleId,guestRoleId;
@@ -81,6 +85,7 @@ public class Login extends AppCompatActivity {
     private final String APP_PREFERENCES_LOGIN="login";
     private final String APP_PREFERENCES_PASSWORD="password";
     private SQLiteDatabase database;
+    private Switch showPasswordSwitch;
     CheckInternetConnection checkInternetConnection;
 
     @Override
@@ -95,6 +100,29 @@ public class Login extends AppCompatActivity {
         getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_login);
         init();
+        noAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(stateInternet) {
+                    Intent intent = new Intent(Login.this, Registration.class);
+                    startActivity(intent);
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                }
+                else{
+                    Toast.makeText(Login.this, "Регистрация в оффлайн-режиме не доступна! ", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        showPasswordSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(!b)
+                    password.setTransformationMethod(new PasswordTransformationMethod());
+                else
+                    password.setTransformationMethod(null);
+                password.setSelection(password.length());
+            }
+        });
         try {
             dbHelper = new DbHelper(this, "project.db", null, 1);
             worksWithDb.userRegister(dbHelper);
@@ -279,7 +307,7 @@ public class Login extends AppCompatActivity {
             Toast.makeText(Login.this, "Отсутствует интернет подключение, вход возможен только авторизованным пользователям! ", Toast.LENGTH_SHORT).show();
         }
     }
-    public void SignUp(View view){
+    /*public void SignUp(View view){
         if(stateInternet) {
             Intent intent = new Intent(this, Registration.class);
             startActivity(intent);
@@ -288,19 +316,21 @@ public class Login extends AppCompatActivity {
         else{
             Toast.makeText(Login.this, "Регистрация в оффлайн-режиме не доступна! ", Toast.LENGTH_SHORT).show();
         }
-    }
+    }*/
 
     private void init() {
         bookIconImageView = findViewById(R.id.bookIconImageView);
         bookITextView = findViewById(R.id.bookITextView);
         rootView = findViewById(R.id.rootView);
         afterAnimationView = findViewById(R.id.afterAnimationView);
+        noAccount = findViewById(R.id.noAccountTextViewLoginActivity);
         login=findViewById(R.id.loginEditText);
         password=findViewById(R.id.passwordEditText);
         btn_login=findViewById(R.id.loginButton);
         checkInternetConnection=new CheckInternetConnection();
         checkBox=findViewById(R.id.checkBox);
         sharedPreferences = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
+        showPasswordSwitch=findViewById(R.id.switchShowPasswordLoginActivity);
     }
 
     private void startAnimation() {
