@@ -29,8 +29,7 @@
     <string name="newFilmsTextViewLogin">Новые фильмы ждут вас!</string>
     <string name="loginTextViewLogin">Логин</string>
     <string name="passwordTextViewLogin">Пароль</string>
-    <string name="confirmRegistrationButtonLogin">Регистрация</string>
     <string name="stayBackSwitchLogin">Не выходить</string>
     <string name="enterButtonLogin">Войти</string>
-    <string name="skipButtonLogin">Пропустить</string>
+    <string name="noAccountTextViewLogin">У меня нет аккаунта</string>
 </resources>

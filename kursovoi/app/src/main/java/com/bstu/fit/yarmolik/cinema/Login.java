@@ -123,16 +123,7 @@ public class Login extends AppCompatActivity {
                 password.setSelection(password.length());
             }
         });
-        try {
-            dbHelper = new DbHelper(this, "project.db", null, 1);
-            worksWithDb.userRegister(dbHelper);
-            worksWithDb.ticketInfo(dbHelper);
-            worksWithDb.seanceData(dbHelper);
-            database=dbHelper.getWritableDatabase();
-        }
-        catch (Exception ex){
-            Toast.makeText(Login.this, ex.getMessage(), Toast.LENGTH_LONG).show();
-        }
+
 
         new CountDownTimer(3000, 1000) {
 
@@ -226,7 +217,7 @@ public class Login extends AppCompatActivity {
                                             //Toast.makeText(Login.this, "Уже заходим...", Toast.LENGTH_LONG).show();
                                             intent = new Intent(Login.this, MainActivity.class);
                                             intent.putExtra("stateInternetConnection", stateInternet);
-                                            chekLocalUser();
+                                            checkLocalUser();
                                             if(checkBox.isChecked())
                                                 checkBoxChoose="OK";
                                             else
@@ -307,17 +298,6 @@ public class Login extends AppCompatActivity {
             Toast.makeText(Login.this, "Отсутствует интернет подключение, вход возможен только авторизованным пользователям! ", Toast.LENGTH_SHORT).show();
         }
     }
-    /*public void SignUp(View view){
-        if(stateInternet) {
-            Intent intent = new Intent(this, Registration.class);
-            startActivity(intent);
-            this.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-        }
-        else{
-            Toast.makeText(Login.this, "Регистрация в оффлайн-режиме не доступна! ", Toast.LENGTH_SHORT).show();
-        }
-    }*/
-
     private void init() {
         bookIconImageView = findViewById(R.id.bookIconImageView);
         bookITextView = findViewById(R.id.bookITextView);
@@ -331,6 +311,16 @@ public class Login extends AppCompatActivity {
         checkBox=findViewById(R.id.checkBox);
         sharedPreferences = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
         showPasswordSwitch=findViewById(R.id.switchShowPasswordLoginActivity);
+        try {
+            dbHelper = new DbHelper(this, "project.db", null, 1);
+            worksWithDb.userRegister(dbHelper);
+            worksWithDb.ticketInfo(dbHelper);
+            worksWithDb.seanceData(dbHelper);
+            database=dbHelper.getWritableDatabase();
+        }
+        catch (Exception ex){
+            Toast.makeText(Login.this, ex.getMessage(), Toast.LENGTH_LONG).show();
+        }
     }
 
     private void startAnimation() {
@@ -387,7 +377,7 @@ public class Login extends AppCompatActivity {
         login.setText(null);
         password.setText(null);
     }
-    private void chekLocalUser(){
+    private void checkLocalUser(){
         String id="";
         try {
             query = "select * from user_data where id=" + "'" + userId + "'";
