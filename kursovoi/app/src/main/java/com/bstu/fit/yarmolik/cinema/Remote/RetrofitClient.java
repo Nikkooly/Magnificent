@@ -23,7 +23,7 @@ public class RetrofitClient {
         if(instance==null)
             instance=new Retrofit.Builder()
                     //.baseUrl("http://10.0.2.2:5000/")
-                    .baseUrl("http://8acaf7cc4083.ngrok.io")
+                    .baseUrl("http://cc13589472e4.ngrok.io")
                     .addConverterFactory(ScalarsConverterFactory.create())
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())

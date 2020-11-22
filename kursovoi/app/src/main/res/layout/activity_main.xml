@@ -17,6 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:animateLayoutChanges="true"
+            app:labelVisibilityMode="labeled"
             app:itemBackground="@color/menuDownColor"
             app:itemIconTint="@drawable/selector_bottombar_item"
             app:itemTextColor="@drawable/selector_bottombar_item"

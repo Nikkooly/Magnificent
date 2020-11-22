@@ -34,7 +34,7 @@
         android:layout_marginEnd="25dp"
         android:fontFamily="@font/nunito_sans_italic"
         android:text="@string/citationTextViewRegistration"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorAccentText"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -85,7 +85,7 @@
             android:fontFamily="@font/nunito_sans"
             android:hint="@string/loginEditTextRegistration"
             android:inputType="text"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/colorAccentText"
             android:textColorHint="@color/HintColorText" />
 
     </LinearLayout>
@@ -124,7 +124,7 @@
             android:fontFamily="@font/nunito_sans"
             android:hint="@string/emailEditTextRegistration"
             android:inputType="textEmailAddress"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/colorAccentText"
             android:textColorHint="@color/HintColorText" />
     </LinearLayout>
 
@@ -162,7 +162,7 @@
             android:fontFamily="@font/nunito_sans"
             android:hint="@string/passwordEditTextRegistration"
             android:inputType="textPassword"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/colorAccentText"
             android:textColorHint="@color/HintColorText" />
 
         <Switch
@@ -206,7 +206,7 @@
         android:layout_marginStart="25dp"
         android:text="@string/citationAuthorTextViewRegistration"
         android:fontFamily="@font/nunito_sans_italic"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorAccentText"
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView50" />
