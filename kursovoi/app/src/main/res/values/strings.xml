@@ -12,7 +12,7 @@
     <string name="login_error">Username can not be empty</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-<!--Registration activity-->
+    <!--Registration activity-->
     <string name="loginTextViewRegistration">Логин</string>
     <string name="emailTextViewRegistration">Почта</string>
     <string name="passwordTextViewRegistration">Пароль</string>

@@ -91,11 +91,7 @@ private TextView nameFilmTextView, genreTextView,dateTimeTextView,dateTextView,c
 private ConstraintLayout constraintLayout;
 private EditText emailEditText;
 private Button button;
-private DbHelper dbHelper;
-private String query;
 private Cursor c;
-private WorksWithDb worksWithDb=new WorksWithDb();
-private SQLiteDatabase database;
 private CompositeDisposable compositeDisposable;
 private ImageView imageView,imageView2;
     @Override
@@ -144,11 +140,8 @@ private ImageView imageView,imageView2;
                                 @Override
                                 public void accept(String s) throws Exception {
                                     alertDialog.dismiss();
-                                    //Toast.makeText(TicketInfo.this, s, Toast.LENGTH_SHORT).show();
                                     if (!s.equals("No")) {
                                         try {
-                                            //dbHelper.insertSeance(seanceId, cinemaInfo, hallInfo, nameFilmTextView.getText().toString(), date, startTime, endTime);
-                                            //dbHelper.deleteTickets(seanceId,Login.userId);
                                             Call<List<PlacesResponse>> call = iMyApi.getPlaces(Login.userId, seanceId);
                                             ArrayList<Integer> loadPlace = new ArrayList<>();
                                             ArrayList<String> idPlace=new ArrayList<>();
@@ -159,13 +152,9 @@ private ImageView imageView,imageView2;
                                                         loadPlace.add((placesResponse.getPlace()));
                                                         idPlace.add(placesResponse.getId());
                                                     }
-                                                   /* for (int i = 0; i < loadPlace.size(); i++) {
-                                                        dbHelper.insertTicket(idPlace.get(i),seanceId,Login.userId,loadPlace.get(i).toString());
-                                                    }*/
                                                     Toast.makeText(TicketInfo.this, "Успешно добавлено", Toast.LENGTH_SHORT).show();
                                                     Intent intent = new Intent(TicketInfo.this, MainActivity.class);
                                                     startActivity(intent);
-                                                    /*Toast.makeText(TicketInfo.this, s, Toast.LENGTH_SHORT).show();*/
                                                 }
 
                                                 @Override
@@ -233,8 +222,6 @@ private ImageView imageView,imageView2;
         countPlacesTextView.setText(SelectTickets.counter.toString()+" м.");
         compositeDisposable=new CompositeDisposable();
         places=new ArrayList<>();
-        dbHelper = new DbHelper(this, "project.db", null, 1);
-        database=dbHelper.getWritableDatabase();
     }
     private void loadFilms(String id){
         Call<FilmResponse> call=iMyApi.getFilm(id);

@@ -68,11 +68,7 @@ SliderFragment sliderFragment;
     private BottomNavigationView bottomNavigationView;
     private boolean stateInternet;
     CheckInternetConnection checkInternetConnection;
-    private DbHelper dbHelper;
-    private WorksWithDb worksWithDb=new WorksWithDb();
-    private SQLiteDatabase database;
-    private String query;
-    private Cursor c;
+
     public void Open(String idFilm){
         currentFragment = new InfoFilmFragment();
         Bundle bundle = new Bundle();
@@ -172,8 +168,6 @@ SliderFragment sliderFragment;
             hall=new ArrayList<>();
             filmId=new ArrayList<>();
             endTime=new ArrayList<>();
-            dbHelper = new DbHelper(MainActivity.this, "project.db", null, 1);
-            database=dbHelper.getReadableDatabase();
             filmName=new ArrayList<>();
             checkInternetConnection=new CheckInternetConnection();
         }
@@ -183,8 +177,7 @@ SliderFragment sliderFragment;
             @Override
             public void onResponse(Call<List<UserTicket>> call, Response<List<UserTicket>> response) {
                 if(!response.body().toString().equals("[]") || !response.body().toString().equals("")){
-                    dbHelper.deleteAllTickets();
-                    dbHelper.deleteAllSeances();
+
                     for(UserTicket userTicket: response.body()){
                         nameFilm.add(userTicket.getName());
                         idSeance.add(userTicket.getSeanceId());
@@ -196,7 +189,6 @@ SliderFragment sliderFragment;
                         endTime.add(userTicket.getEndTime());
                     }
                     for(int i=0;i<nameFilm.size();i++){
-                        dbHelper.insertSeance(idSeance.get(i),cinema.get(i),hall.get(i),nameFilm.get(i),dateSeance.get(i),timeSeance.get(i),endTime.get(i));
                         loadPlaces(idSeance.get(i));
                     }
                 }
@@ -220,9 +212,6 @@ SliderFragment sliderFragment;
                 for (PlacesResponse placesResponse : response.body()) {
                     loadPlace.add((placesResponse.getPlace()));
                     placeId.add(placesResponse.getId());
-                }
-                for(int i=0;i<loadPlace.size();i++){
-                    dbHelper.insertTicket(placeId.get(i),seanceId,Login.userId,loadPlace.get(i).toString());
                 }
             }
             @Override

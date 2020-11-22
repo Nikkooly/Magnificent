@@ -8,8 +8,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.text.method.PasswordTransformationMethod;
@@ -22,8 +20,6 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
-import android.widget.RelativeLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,11 +27,9 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
-import androidx.fragment.app.Fragment;
 
 import com.bestsoft32.tt_fancy_gif_dialog_lib.TTFancyGifDialog;
 import com.bestsoft32.tt_fancy_gif_dialog_lib.TTFancyGifDialogListener;
-import com.bstu.fit.yarmolik.cinema.Fragments.FilmFragment;
 import com.bstu.fit.yarmolik.cinema.Fragments.MainActivity;
 import com.bstu.fit.yarmolik.cinema.LocalDataBase.DbHelper;
 import com.bstu.fit.yarmolik.cinema.LocalDataBase.WorksWithDb;
@@ -43,7 +37,6 @@ import com.bstu.fit.yarmolik.cinema.Manager.ManagerActivity;
 import com.bstu.fit.yarmolik.cinema.Model.LoginUser;
 import com.bstu.fit.yarmolik.cinema.Remote.IMyApi;
 import com.bstu.fit.yarmolik.cinema.Remote.RetrofitClient;
-import com.bstu.fit.yarmolik.cinema.Responces.FilmResponse;
 import com.bstu.fit.yarmolik.cinema.Responces.GuestResponse;
 import com.bstu.fit.yarmolik.cinema.Responces.UserResponce;
 
@@ -66,15 +59,12 @@ public class Login extends AppCompatActivity {
     private TextView bookITextView,noAccount;
     private EditText login,password;
     private Button btn_login;
-    String response="";
     public boolean stateInternet;
     private ConstraintLayout rootView, afterAnimationView;
     private IMyApi iMyApi;
     private SharedPreferences sharedPreferences;
     public static Integer userRoleId,guestRoleId;
     private CheckBox checkBox;
-    private DbHelper dbHelper;
-    private String query;
     private String checkBoxChoose="";
     private Cursor c;
     public static String userId="",guestId,userEmail="",guestEmail,userLogin="",guestLogin;
@@ -149,36 +139,12 @@ public class Login extends AppCompatActivity {
                     stateInternet=false;
                     AlertDialog.Builder builder = new AlertDialog.Builder(Login.this);
                     builder.setTitle("Важное сообщение!")
-                            .setMessage("Отсутствует подключение к интернету, многие функции будут не доступны. Включите интернет и перезайдите в приложение!")
+                            .setMessage("Отсутствует подключение к интернету. Для работы в приложенее требуется интернет соеденение.")
                             .setIcon(R.drawable.app_icon)
                             .setPositiveButton("ОК", new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
                                     // Закрываем окно
                                     dialog.cancel();
-                                    if(sharedPreferences.contains(APP_PREFERENCES_LOGIN)) {
-                                        new TTFancyGifDialog.Builder(Login.this)
-                                                .setTitle("Magnifisent")
-                                                .setMessage("Желаете войти под ранее сохраненным логином и паролем?")
-                                                .setPositiveBtnText("Ok")
-                                                .setPositiveBtnBackground("#22b573")
-                                                .setNegativeBtnText("Cancel")
-                                                .setNegativeBtnBackground("#c1272d")
-                                                .setGifResource(R.drawable.cinema2)      //pass your gif, png or jpg
-                                                .isCancellable(true)
-                                                .OnPositiveClicked(new TTFancyGifDialogListener() {
-                                                    @Override
-                                                    public void OnClick() {
-                                                        loadLocalWithSharedPreferences(sharedPreferences.getString(APP_PREFERENCES_LOGIN, ""),sharedPreferences.getString(APP_PREFERENCES_PASSWORD, ""));
-                                                    }
-                                                })
-                                                .OnNegativeClicked(new TTFancyGifDialogListener() {
-                                                    @Override
-                                                    public void OnClick() {
-                                                        //Toast.makeText(MainActivity.this,"Cancel",Toast.LENGTH_SHORT).show();
-                                                    }
-                                                })
-                                                .build();
-                                    }
                                 }
                             });
                     builder.create();
@@ -205,19 +171,14 @@ public class Login extends AppCompatActivity {
                             @Override
                             public void onResponse(Call<List<UserResponce>> call, Response<List<UserResponce>> response) {
                                     for (UserResponce userResponce : response.body()) {
-                                        //Toast.makeText(Login.this, response.body().size(), Toast.LENGTH_LONG).show();
-                                        //Toast.makeText(Login.this, userResponce.toString(), Toast.LENGTH_LONG).show();
                                         userId = userResponce.getId();
                                         userRoleId = userResponce.getRoleId();
                                         userEmail = userResponce.getEmail();
                                         userLogin = userResponce.getLogin();
-                                        //Toast.makeText(Login.this, userRoleId.toString(), Toast.LENGTH_LONG).show();
                                         if (userRoleId == 1) {
                                             alertDialog.dismiss();
-                                            //Toast.makeText(Login.this, "Уже заходим...", Toast.LENGTH_LONG).show();
                                             intent = new Intent(Login.this, MainActivity.class);
                                             intent.putExtra("stateInternetConnection", stateInternet);
-                                            checkLocalUser();
                                             if(checkBox.isChecked())
                                                 checkBoxChoose="OK";
                                             else
@@ -254,30 +215,7 @@ public class Login extends AppCompatActivity {
                     }
                     else
                         {
-                            try {
-                                query = "select * from user_data where login=" + "'" + login.getText().toString() + "'" + " and password=" + "'" + Registration.md5(password.getText().toString()) + "'";
-                                c = database.rawQuery(query, null);
-                                c.moveToFirst();
-                                while (!c.isAfterLast()) {
-                                    userId = c.getString(0).toString();
-                                    userLogin = c.getString(1).toString();
-                                    userEmail = c.getString(2).toString();
-                                    userRoleId=3;
-                                    c.moveToNext();
-                                }
-                                c.close();
-                                if (!userId.equals("")) {
-                                    intent = new Intent(Login.this, MainActivity.class);
-                                    startActivity(intent);
-                                    clear();
-                                } else {
-                                    Toast.makeText(Login.this, "Неверный логин или пароль. Проверьте введенные данные!", Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                            catch (Exception ex){
-                                Toast.makeText(Login.this, ex.getMessage(), Toast.LENGTH_LONG).show();
-                            }
-                        //Toast.makeText(Login.this, "Нет интернета", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Login.this, "Отсутствует соеденение с интернетом", Toast.LENGTH_LONG).show();
                     }
                 } else {
                     Toast.makeText(Login.this, "Некорректные данные", Toast.LENGTH_SHORT).show();
@@ -311,16 +249,6 @@ public class Login extends AppCompatActivity {
         checkBox=findViewById(R.id.checkBox);
         sharedPreferences = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
         showPasswordSwitch=findViewById(R.id.switchShowPasswordLoginActivity);
-        try {
-            dbHelper = new DbHelper(this, "project.db", null, 1);
-            worksWithDb.userRegister(dbHelper);
-            worksWithDb.ticketInfo(dbHelper);
-            worksWithDb.seanceData(dbHelper);
-            database=dbHelper.getWritableDatabase();
-        }
-        catch (Exception ex){
-            Toast.makeText(Login.this, ex.getMessage(), Toast.LENGTH_LONG).show();
-        }
     }
 
     private void startAnimation() {
@@ -377,25 +305,7 @@ public class Login extends AppCompatActivity {
         login.setText(null);
         password.setText(null);
     }
-    private void checkLocalUser(){
-        String id="";
-        try {
-            query = "select * from user_data where id=" + "'" + userId + "'";
-            c = database.rawQuery(query, null);
-            c.moveToFirst();
-            while (!c.isAfterLast()) {
-                id = c.getString(0).toString();
-                c.moveToNext();
-            }
-            c.close();
-            if (id.equals("")) {
-                dbHelper.insertUserData(userId,userLogin,userEmail,Registration.md5(password.getText().toString()));
-            }
-        }
-        catch (Exception ex){
-            Toast.makeText(Login.this, ex.getMessage(), Toast.LENGTH_LONG).show();
-        }
-    }
+
     private void loadWithSharedPreferences(String login,String password){
         LoginUser user = new LoginUser(login, password);
         Call<List<UserResponce>> call = iMyApi.checkLogin(user);
@@ -418,24 +328,16 @@ public class Login extends AppCompatActivity {
             }
         });
     }
-    private void loadLocalWithSharedPreferences(String login, String password){
-        query = "select * from user_data where login=" + "'" + login + "'" + " and password=" + "'" + password + "'";
-        c = database.rawQuery(query, null);
-        c.moveToFirst();
-        while (!c.isAfterLast()) {
-            userId = c.getString(0).toString();
-            userLogin = c.getString(1).toString();
-            userEmail = c.getString(2).toString();
-            c.moveToNext();
+    /*public void onCheckboxClicked(View view) {
+
+        if(fingerCheck.isChecked()){
+            promptInfo = new BiometricPrompt.PromptInfo.Builder()
+                    .setTitle("Magnificent Touch")
+                    .setDescription("Коснитесь сканера отпечатка пальца и дождитесь потверждения")
+                    .setNegativeButtonText("Exit")
+                    .build();
+            biometricPrompt.authenticate(promptInfo);
         }
-        c.close();
-        if (!userId.equals("")) {
-            intent = new Intent(Login.this, MainActivity.class);
-            startActivity(intent);
-            clear();
-        } else {
-            Toast.makeText(Login.this, "Ошибка системы", Toast.LENGTH_SHORT).show();
-        }
-    }
+    }*/
 
 }

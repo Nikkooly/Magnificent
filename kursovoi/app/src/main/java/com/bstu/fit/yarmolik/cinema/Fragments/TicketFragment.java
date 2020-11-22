@@ -50,11 +50,6 @@ public class TicketFragment extends Fragment {
     private ArrayList<TicketStaticModel> ticketStaticModels;
     private ArrayList<String> nameFilm,dateSeance,idSeance,timeSeance,cinema,hall,filmId,endTime,places;
     private boolean status=false;
-    private DbHelper dbHelper;
-    private WorksWithDb worksWithDb=new WorksWithDb();
-    private SQLiteDatabase database;
-    private String query;
-    private Cursor c;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -73,39 +68,8 @@ public class TicketFragment extends Fragment {
                 }
             } else {
                 checkInternetState = false;
-                try {
-                    query = "select distinct s.cinema_info,s.hall_info,s.film_info,s.date,s.start_time,s.end_time,s.id from tickets t inner join seance s on t.seance_id=s.id " +
-                            "where t.user_id=" + "'" + Login.userId + "'";
-                    c = database.rawQuery(query, null);
-                    c.moveToFirst();
-                    while (!c.isAfterLast()) {
-                        cinema.add( c.getString(0).toString());
-                        hall.add( c.getString(1).toString());
-                        nameFilm.add(c.getString(2).toString());
-                        dateSeance.add( c.getString(3).toString());
-                        timeSeance.add( c.getString(4).toString());
-                        endTime.add( c.getString(5).toString());
-                        idSeance.add(c.getString(6).toString());
-                        c.moveToNext();
-                    }
-                    c.close();
-                    if (nameFilm.size()!=0) {
-                        constraintLayout.setVisibility(View.GONE);
-                        recyclerView.setVisibility(View.VISIBLE);
-                        for(int i=0;i<nameFilm.size();i++) {
-                            ticketStaticModels.add(new TicketStaticModel(cinema.get(i),hall.get(i),nameFilm.get(i),dateSeance.get(i),timeSeance.get(i),endTime.get(i),idSeance.get(i)));
-                           // ticketStaticModels.add(new TicketStaticModel("fggbfbgf","bgfbgfbgf","fgbbgfbgf","bfgfgbbg","bfgbfgbg","fgbfgbfgb","Fgbbfgbgf"));
-                        }
-                        ticketStaticAdapter = new TicketStaticAdapter(ticketStaticModels, TicketFragment.this);
-                        recyclerView.setAdapter(ticketStaticAdapter);
-                    } else {
-                        constraintLayout.setVisibility(View.VISIBLE);
-                        recyclerView.setVisibility(View.GONE);
-                    }
-                }
-                catch (Exception ex){
-                    Toast.makeText(getContext(), ex.getMessage(), Toast.LENGTH_LONG).show();
-                }
+                Toast.makeText(getActivity(), "Отсутствует соеденение с интернетом", Toast.LENGTH_LONG).show();
+
             }
         }
         catch (Exception ex){
@@ -130,8 +94,6 @@ public class TicketFragment extends Fragment {
         filmId=new ArrayList<>();
         endTime=new ArrayList<>();
         checkInternetConnection=new CheckInternetConnection();
-        dbHelper = new DbHelper(getContext(), "project.db", null, 1);
-        database=dbHelper.getReadableDatabase();
         places=new ArrayList<>();
     }
     private void loadUserTicketsInfo(String id){
