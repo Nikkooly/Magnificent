@@ -1,19 +1,71 @@
 package com.bstu.fit.yarmolik.cinema;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Bundle;
+import android.util.Log;
 
-public class CheckInternetConnection {
-    public boolean isOnline(Context context)
-    {
-        ConnectivityManager cm =
-                (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo netInfo = cm.getActiveNetworkInfo();
-        if (netInfo != null && netInfo.isConnectedOrConnecting())
-        {
-            return true;
+import dmax.dialog.SpotsDialog;
+
+public class CheckInternetConnection extends Activity {
+    private BroadcastReceiver broadcastReceiver;
+    private AlertDialog alertDialog;
+
+    public void installListener(Context context) {
+
+        if (broadcastReceiver == null) {
+            broadcastReceiver = new BroadcastReceiver() {
+
+                @Override
+                public void onReceive(Context context, Intent intent) {
+
+                    Bundle extras = intent.getExtras();
+
+                    NetworkInfo info = (NetworkInfo) extras
+                            .getParcelable("networkInfo");
+
+                    NetworkInfo.State state = info.getState();
+                    Log.d("InternalBroadcastReceiver", info.toString() + " "
+                            + state.toString());
+
+                    if (state == NetworkInfo.State.CONNECTED) {
+                        onNetworkUp(context);
+                    } else {
+                        onNetworkDown(context);
+                    }
+
+                }
+            };
+
+            final IntentFilter intentFilter = new IntentFilter();
+            intentFilter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
+            context.registerReceiver(broadcastReceiver, intentFilter);
         }
-        return false;
+    }
+    private void onNetworkDown(Context context){
+         alertDialog = new SpotsDialog.Builder()
+                .setContext(context)
+                .setTheme(R.style.CustomInternetDialog)
+                .build();
+        alertDialog.show();
+        /*AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle("Интернет-подключение отсутствует");
+        builder.setMessage("Работа приложения будет приостановлена. Пожалуйста включите интернет-соеденение и войдите в приложение заново");
+        builder.setCancelable(true);
+        builder.create();
+        builder.show();*/
+    }
+    private void onNetworkUp(Context context){
+        if(alertDialog!=null){
+            alertDialog.cancel();
+        }
+
     }
 }

@@ -1,10 +1,10 @@
 package com.bstu.fit.yarmolik.cinema.Model;
 
 public class UserData {
-    public String Login;
-    public String Email;
-    public String Password;
-    public int RoleId;
+    private String Login;
+    private String Email;
+    private String Password;
+    private int RoleId;
     public UserData(){
 
     }

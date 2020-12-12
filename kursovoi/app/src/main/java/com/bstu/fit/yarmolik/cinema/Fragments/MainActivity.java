@@ -26,8 +26,6 @@ import com.bstu.fit.yarmolik.cinema.Fragments.FilmFragment;
 import com.bstu.fit.yarmolik.cinema.Fragments.FragmentMore;
 import com.bstu.fit.yarmolik.cinema.Fragments.SliderFragment;
 import com.bstu.fit.yarmolik.cinema.Fragments.TicketFragment;
-import com.bstu.fit.yarmolik.cinema.LocalDataBase.DbHelper;
-import com.bstu.fit.yarmolik.cinema.LocalDataBase.WorksWithDb;
 import com.bstu.fit.yarmolik.cinema.Login;
 import com.bstu.fit.yarmolik.cinema.Manager.AddPlacesSeanceFragment;
 import com.bstu.fit.yarmolik.cinema.Manager.ManagerActivity;
@@ -45,6 +43,7 @@ import com.jaredrummler.materialspinner.MaterialSpinner;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import dmax.dialog.SpotsDialog;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -56,9 +55,10 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity  {
 SliderFragment sliderFragment;
+    private CheckInternetConnection checkInternetConnection;
     private Toolbar toolbar;
-    Fragment currentFragment = null;
-    FragmentTransaction ft;
+    private Fragment currentFragment = null;
+    private FragmentTransaction ft;
     private boolean status=true;
     public IMyApi iMyApi;
     public List<FilmResponse> film;
@@ -67,7 +67,6 @@ SliderFragment sliderFragment;
     public ArrayList<Integer> durationList,yearList;
     private BottomNavigationView bottomNavigationView;
     private boolean stateInternet;
-    CheckInternetConnection checkInternetConnection;
 
     public void Open(String idFilm){
         currentFragment = new InfoFilmFragment();
@@ -88,16 +87,17 @@ SliderFragment sliderFragment;
         getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
         init();
-        if (checkInternetConnection.isOnline(MainActivity.this)) {
-            if(Login.userRoleId!=3) {
-                if(status) {
+        checkInternetConnection.installListener(this);
+        try {
+            if (Login.userRoleId != 3) {
+                if (status) {
                     loadUserTicketsInfo(Login.userId);
-                    status=false;
+                    status = false;
                 }
             }
-            else{
-
-            }
+        }
+        catch(NullPointerException ex){
+            Log.d("Exception: ", Objects.requireNonNull(ex.getMessage()));
         }
         iMyApi= RetrofitClient.getInstance().create(IMyApi.class);
         ft = getSupportFragmentManager().beginTransaction();

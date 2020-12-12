@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -23,6 +24,7 @@ import com.bstu.fit.yarmolik.cinema.Responces.TicketResponse;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -153,20 +155,25 @@ private List<TicketResponse> ticketResponseArrayList;
         });
     }
     public void loadBookTickets(String id){
-        Call<List<TicketInfoData>> call=iMyApi.getTicketInfo(id);
-        call.enqueue(new Callback<List<TicketInfoData>>() {
-            @Override
-            public void onResponse(Call<List<TicketInfoData>> call, Response<List<TicketInfoData>> response) {
-                for(TicketInfoData ticketInfoData: response.body()){
-                    bookTicket.add(ticketInfoData.getPlace());
+        try {
+            Call<List<TicketInfoData>> call = iMyApi.getTicketInfo(id);
+            call.enqueue(new Callback<List<TicketInfoData>>() {
+                @Override
+                public void onResponse(Call<List<TicketInfoData>> call, Response<List<TicketInfoData>> response) {
+                    for (TicketInfoData ticketInfoData : response.body()) {
+                        bookTicket.add(ticketInfoData.getPlace());
+                    }
                 }
-            }
 
-            @Override
-            public void onFailure(Call<List<TicketInfoData>> call, Throwable t) {
+                @Override
+                public void onFailure(Call<List<TicketInfoData>> call, Throwable t) {
 
-            }
-        });
+                }
+            });
+        }
+        catch(Exception ex){
+            Log.d("Exception: ", Objects.requireNonNull(ex.getMessage()));
+        }
     }
     private ArrayList<String> returnIdTickets(){
         return idTicketsListSelectByUser;

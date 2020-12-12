@@ -40,23 +40,20 @@ import retrofit2.Response;
 
 public class AddInfoTicket extends AppCompatActivity {
 private String selectedCinema;
-String idFilm;
+private String idFilm;
 private Button addTicket;
-MaterialSpinner spinner;
-Fragment currentFragment = null;
-FragmentTransaction ft;
-RelativeLayout relativeLayout;
+private MaterialSpinner spinner;
+private RelativeLayout relativeLayout;
 private ArrayList<SeanceModel> seanceModels;
-ArrayList<String> idCinema,nameCinema,addressCinema,infoCinema;
+private ArrayList<String> idCinema,nameCinema,addressCinema,infoCinema;
 private ArrayList<String> hallId,startTime,endTime,seanceId,hallName;
-List<CinemaResponce> cinema;
+private List<CinemaResponce> cinema;
 public static String dateFilm="";
 public static String cinemaInfo="";
-RecyclerView recyclerView;
+private RecyclerView recyclerView;
 private String idSeanceCard="";
 private SeanceAdapter seanceAdapter;
 private List<SeanceDateResponse> dateResponses;
-CompositeDisposable compositeDisposable;
 private IMyApi iMyApi;
 private HorizontalCalendar horizontalCalendar;
     @Override
@@ -157,7 +154,6 @@ private HorizontalCalendar horizontalCalendar;
         infoCinema=new ArrayList<String>();
         iMyApi= RetrofitClient.getInstance().create(IMyApi.class);
         relativeLayout=findViewById(R.id.relativeCalendar);
-        compositeDisposable=new CompositeDisposable();
         startTime=new ArrayList<String>();
         hallId=new ArrayList<String>();
         hallName=new ArrayList<>();

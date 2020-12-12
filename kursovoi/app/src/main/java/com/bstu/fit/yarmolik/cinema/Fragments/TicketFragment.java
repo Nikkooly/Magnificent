@@ -1,11 +1,7 @@
 package com.bstu.fit.yarmolik.cinema.Fragments;
 
-import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -15,18 +11,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import com.bstu.fit.yarmolik.cinema.Adapters.TicketAdapter;
-import com.bstu.fit.yarmolik.cinema.Adapters.TicketStaticAdapter;
 import com.bstu.fit.yarmolik.cinema.CheckInternetConnection;
-import com.bstu.fit.yarmolik.cinema.LocalDataBase.DbHelper;
-import com.bstu.fit.yarmolik.cinema.LocalDataBase.WorksWithDb;
 import com.bstu.fit.yarmolik.cinema.Login;
 import com.bstu.fit.yarmolik.cinema.ModelAdapter.TicketModel;
 import com.bstu.fit.yarmolik.cinema.ModelAdapter.TicketStaticModel;
 import com.bstu.fit.yarmolik.cinema.R;
-import com.bstu.fit.yarmolik.cinema.Registration;
 import com.bstu.fit.yarmolik.cinema.Remote.IMyApi;
 import com.bstu.fit.yarmolik.cinema.Remote.RetrofitClient;
 import com.bstu.fit.yarmolik.cinema.Responces.UserTicket;
@@ -45,7 +36,6 @@ public class TicketFragment extends Fragment {
     private IMyApi iMyApi;
     public boolean checkInternetState;
     private TicketAdapter ticketAdapter;
-    private TicketStaticAdapter ticketStaticAdapter;
     private ArrayList<TicketModel> ticketModels;
     private ArrayList<TicketStaticModel> ticketStaticModels;
     private ArrayList<String> nameFilm,dateSeance,idSeance,timeSeance,cinema,hall,filmId,endTime,places;
@@ -56,8 +46,6 @@ public class TicketFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_ticket, container, false);
         init(view);
         try {
-            if (checkInternetConnection.isOnline(getContext())) {
-                checkInternetState = true;
                 if (Login.userRoleId == 1) {
                     constraintLayout.setVisibility(View.GONE);
                     recyclerView.setVisibility(View.VISIBLE);
@@ -66,11 +54,6 @@ public class TicketFragment extends Fragment {
                     constraintLayout.setVisibility(View.VISIBLE);
                     recyclerView.setVisibility(View.GONE);
                 }
-            } else {
-                checkInternetState = false;
-                Toast.makeText(getActivity(), "Отсутствует соеденение с интернетом", Toast.LENGTH_LONG).show();
-
-            }
         }
         catch (Exception ex){
             Toast.makeText(getContext(), ex.getMessage(), Toast.LENGTH_LONG).show();

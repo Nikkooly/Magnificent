@@ -31,14 +31,14 @@ import retrofit2.Retrofit;
 
 public class DeleteFilmFragment extends Fragment {
 IMyApi iMyApi;
-    MaterialSpinner spinner;
-    List<FilmResponse> posts;
-    TextView textView;
-    ArrayList<String> list;
-    ArrayList<String> idList;
-    String choose="";
-    FilmResponse filmResponse;
-    Button deleteButton;
+    private MaterialSpinner spinner;
+    private List<FilmResponse> posts;
+    private TextView textView;
+    private ArrayList<String> list;
+    private ArrayList<String> idList;
+    private String choose="";
+    private FilmResponse filmResponse;
+    private Button deleteButton;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

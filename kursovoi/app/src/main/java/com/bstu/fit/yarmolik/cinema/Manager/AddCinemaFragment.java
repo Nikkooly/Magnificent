@@ -25,10 +25,10 @@ import io.reactivex.schedulers.Schedulers;
 
 
 public class AddCinemaFragment extends Fragment {
-    private EditText name,adress;
-    IMyApi iMyApi;
+    private EditText name,address;
+    private IMyApi iMyApi;
     private Button addCinemaButton;
-    CompositeDisposable compositeDisposable;
+    private CompositeDisposable compositeDisposable;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -38,12 +38,12 @@ public class AddCinemaFragment extends Fragment {
         addCinemaButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!name.getText().toString().equals("") && !adress.getText().toString().equals("")){
+                if(!name.getText().toString().equals("") && !address.getText().toString().equals("")){
                     AlertDialog alertDialog = new SpotsDialog.Builder()
                             .setContext(getContext())
                             .build();
                     alertDialog.show();
-                    CinemaInfo cinema= new CinemaInfo(name.getText().toString(),adress.getText().toString());
+                    CinemaInfo cinema= new CinemaInfo(name.getText().toString(),address.getText().toString());
                     compositeDisposable.add(iMyApi.addCinema(cinema)
                             .subscribeOn(Schedulers.io())
                             .observeOn(AndroidSchedulers.mainThread())
@@ -72,7 +72,7 @@ public class AddCinemaFragment extends Fragment {
         iMyApi= RetrofitClient.getInstance().create(IMyApi.class);
         compositeDisposable=new CompositeDisposable();
         name=view.findViewById(R.id.addNameOfCinema);
-        adress=view.findViewById(R.id.addAdressOfCinema);
+        address=view.findViewById(R.id.addAdressOfCinema);
         addCinemaButton=view.findViewById(R.id.addCinema);
     }
 }

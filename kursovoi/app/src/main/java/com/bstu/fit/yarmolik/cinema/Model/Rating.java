@@ -1,10 +1,10 @@
 package com.bstu.fit.yarmolik.cinema.Model;
 
 public class Rating {
-    public String FilmId;
-    public String UserId;
-    public String Review;
-    public Float Rating1;
+    private String FilmId;
+    private String UserId;
+    private String Review;
+    private Float Rating1;
 
     public Rating(String filmId, String userId, String review, Float rating1) {
         FilmId = filmId;

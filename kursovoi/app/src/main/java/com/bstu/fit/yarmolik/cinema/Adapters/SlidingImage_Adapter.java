@@ -1,6 +1,7 @@
 package com.bstu.fit.yarmolik.cinema.Adapters;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,11 +9,14 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.bstu.fit.yarmolik.cinema.Fragments.InfoFilmFragment;
+import com.bstu.fit.yarmolik.cinema.Fragments.MainActivity;
 import com.bstu.fit.yarmolik.cinema.R;
 import com.squareup.picasso.Picasso;
 
@@ -26,8 +30,6 @@ import java.util.ArrayList;
         private ArrayList<String> idFilm;
         private LayoutInflater inflater;
         private Context context;
-        Fragment currentFragment = null;
-        FragmentTransaction ft;
 
 
         public SlidingImage_Adapter(Context context,ArrayList<String> IMAGES,ArrayList<String> DESCRIPTION, ArrayList<String> idFilm) {
@@ -61,7 +63,7 @@ import java.util.ArrayList;
                 @Override
                 public void onClick(View view) {
                     //mListener.Open(idFilm.get(position));
-                   /* AppCompatActivity activity = (AppCompatActivity) imageLayout.getContext();
+                    /*MainActivity activity = (MainActivity) imageLayout.getContext();
                     Fragment myFragment = new InfoFilmFragment();
                     Bundle bundle = new Bundle();
                     bundle.putString("idFilmAdapter", idFilm.get(position));

@@ -49,7 +49,6 @@ private Button deleteButton;
     private List<CinemaResponce> cinema;
     private List<HallResponse> hall;
     private ArrayList<String> list;
-    List<FilmResponse> posts;
     private ArrayList<String> idList;
     private ArrayList<String> listHall;
     private ArrayList<String> idListHall;

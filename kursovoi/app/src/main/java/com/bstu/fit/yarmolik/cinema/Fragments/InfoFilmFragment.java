@@ -47,12 +47,12 @@ import retrofit2.Response;
 public class InfoFilmFragment extends Fragment implements OnFragmentBookListener {
     private TextView genreFilm,yearFilm,descriptionFilm,durationFilm,countryFilm;
     private ImageView imageView;
-    FragmentTransaction ft;
+    private FragmentTransaction ft;
     private String idFilmInfo="",posterFilm;
     private IMyApi iMyApi;
     private AutofitTextView nameFilm;
     private ArrayList<String> reviewsList;
-    Button button,reviewButton;
+    private Button button,reviewButton;
     private Dialog reviews;
     private List<ListReview> listReviews;
     private ListView listView;

@@ -20,4 +20,5 @@
     <color name="lightGray">#d3d3d3</color>
     <color name="HintColor">#18DDFF</color>
     <color name="HintColorText">#B9BBBD</color>
+    <color name="spots_dialog_color">#ffffff</color>
 </resources>

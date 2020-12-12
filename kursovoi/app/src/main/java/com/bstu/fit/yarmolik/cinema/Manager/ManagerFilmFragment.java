@@ -25,10 +25,10 @@ import io.reactivex.schedulers.Schedulers;
 
 
 public class ManagerFilmFragment extends Fragment {
-    EditText nameOfTheFilm,yearOfTheFilm,durationOfTheFilm,countryOfTheFilm,genreOfTheFilm,descriptionOfTheFilm,posterOfTheFilm;
-    Button addFilm;
-    IMyApi iMyApi;
-    CompositeDisposable compositeDisposable;
+    private EditText nameOfTheFilm,yearOfTheFilm,durationOfTheFilm,countryOfTheFilm,genreOfTheFilm,descriptionOfTheFilm,posterOfTheFilm;
+    private Button addFilm;
+    private IMyApi iMyApi;
+    private CompositeDisposable compositeDisposable;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

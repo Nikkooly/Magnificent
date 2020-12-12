@@ -8,6 +8,7 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.PasswordTransformationMethod;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -23,7 +24,10 @@ import com.google.android.material.textfield.TextInputLayout;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Objects;
 import java.util.concurrent.Executor;
+
+import javax.crypto.SecretKey;
 
 import dmax.dialog.SpotsDialog;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -34,6 +38,7 @@ public class Registration extends AppCompatActivity {
     private EditText password, email, login;
     private boolean checkLogin,checkEmail,checkPassword;
     public static String response="";
+    private SecretKey secret;
     private IMyApi iMyApi;
     private Button register;
     private CompositeDisposable compositeDisposable;
@@ -43,6 +48,7 @@ public class Registration extends AppCompatActivity {
     private Switch showPasswordSwitch;
     private  UserData user;
     private Executor executor;
+    private String encrypt, decrypt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,46 +74,48 @@ public class Registration extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                loginValue = login.getText().toString();
-                emailValue = email.getText().toString();
-                passwordValue = password.getText().toString();
-                checkLogin = loginValue.matches("^[a-zA-Z][a-zA-Z0-9-_\\.]{1,20}$");
-                checkEmail = emailValue.matches("^([A-Za-z0-9_-]+\\.)*[A-Za-z0-9_-]+@[a-z0-9_-]+(\\.[a-z0-9_-]+)*\\.[a-z]{2,6}$");
-                checkPassword = passwordValue.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}$");
-                if (checkPassword && checkEmail && checkLogin) {
-                    alertDialog = new SpotsDialog.Builder().setContext(Registration.this).build();
-                    alertDialog.show();
-                    try {
-                        user = new UserData(loginValue, emailValue, md5(passwordValue), 1);
-                        compositeDisposable.add(iMyApi.registerUser(user)
-                            .subscribeOn(Schedulers.io())
-                            .observeOn(AndroidSchedulers.mainThread())
-                            .subscribe(s -> {
-                                if(s.equals("User exists")){
-                                    alertDialog.dismiss();
-                                    Toast.makeText(Registration.this, "Пользователь уже существует", Toast.LENGTH_SHORT).show();
-                                }
-                                else if(s.equals("Email exists")){
-                                    alertDialog.dismiss();
-                                    Toast.makeText(Registration.this, "Пользователь с таким email уже существует", Toast.LENGTH_SHORT).show();
-                                }
-                                else {
-                                    alertDialog.dismiss();
-                                    intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-                                    startActivity(intent);
-                                    overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
-                                }
-                            }, throwable -> {
-                                alertDialog.dismiss();
-                                Toast.makeText(Registration.this, throwable.getMessage(), Toast.LENGTH_SHORT).show();
-                            })
-                    );
+                try {
+                    loginValue = login.getText().toString();
+                    emailValue = email.getText().toString();
+                    passwordValue = password.getText().toString();
+                    checkLogin = loginValue.matches("^[a-zA-Z][a-zA-Z0-9-_\\.]{1,20}$");
+                    checkEmail = emailValue.matches("^([A-Za-z0-9_-]+\\.)*[A-Za-z0-9_-]+@[a-z0-9_-]+(\\.[a-z0-9_-]+)*\\.[a-z]{2,6}$");
+                    checkPassword = passwordValue.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}$");
+                    if (checkPassword && checkEmail && checkLogin) {
+                        alertDialog = new SpotsDialog.Builder().setContext(Registration.this).build();
+                        alertDialog.show();
+                        try {
+                            user = new UserData(Encryption.encryptString(loginValue), Encryption.encryptString(emailValue), Encryption.encryptString(passwordValue), 1);
+                            compositeDisposable.add(iMyApi.registerUser(user)
+                                    .subscribeOn(Schedulers.io())
+                                    .observeOn(AndroidSchedulers.mainThread())
+                                    .subscribe(s -> {
+                                        if (s.equals("User exists")) {
+                                            alertDialog.dismiss();
+                                            Toast.makeText(Registration.this, "Пользователь уже существует", Toast.LENGTH_SHORT).show();
+                                        } else if (s.equals("Email exists")) {
+                                            alertDialog.dismiss();
+                                            Toast.makeText(Registration.this, "Пользователь с таким email уже существует", Toast.LENGTH_SHORT).show();
+                                        } else {
+                                            alertDialog.dismiss();
+                                            intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                                            startActivity(intent);
+                                            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                                        }
+                                    }, throwable -> {
+                                        alertDialog.dismiss();
+                                        Toast.makeText(Registration.this, throwable.getMessage(), Toast.LENGTH_SHORT).show();
+                                    })
+                            );
+                        } catch (Exception ex) {
+                            Toast.makeText(Registration.this, ex.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        Toast.makeText(Registration.this, "Некорректные данные", Toast.LENGTH_SHORT).show();
                     }
-                    catch (Exception ex){
-                        Toast.makeText(Registration.this, ex.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                } else {
-                    Toast.makeText(Registration.this, "Некорректные данные", Toast.LENGTH_SHORT).show();
+                }
+                catch(Exception ex){
+                    Log.d("Exception: ", Objects.requireNonNull(ex.getMessage()));
                 }
             }
         });
@@ -138,30 +146,5 @@ public class Registration extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
-    }
-
-    public static String md5(final String s) {
-        final String MD5 = "MD5";
-        try {
-            // Create MD5 Hash
-            MessageDigest digest = java.security.MessageDigest
-                    .getInstance(MD5);
-            digest.update(s.getBytes());
-            byte messageDigest[] = digest.digest();
-
-            // Create Hex String
-            StringBuilder hexString = new StringBuilder();
-            for (byte aMessageDigest : messageDigest) {
-                String h = Integer.toHexString(0xFF & aMessageDigest);
-                while (h.length() < 2)
-                    h = "0" + h;
-                hexString.append(h);
-            }
-            return hexString.toString();
-
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
-        return "";
     }
 }
