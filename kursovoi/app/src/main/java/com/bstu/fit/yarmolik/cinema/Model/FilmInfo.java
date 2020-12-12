@@ -1,13 +1,13 @@
 package com.bstu.fit.yarmolik.cinema.Model;
 
 public class FilmInfo {
-    public String Name;
-    public Integer Year;
-    public String Country;
-    public Integer Duration;
-    public String Genre;
-    public String Description;
-    public String Poster;
+    private String Name;
+    private Integer Year;
+    private String Country;
+    private Integer Duration;
+    private String Genre;
+    private String Description;
+    private String Poster;
     public FilmInfo(String name, Integer year, String country, Integer duration, String genre, String description, String poster){
         Name=name;
         Year=year;

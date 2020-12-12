@@ -47,7 +47,7 @@ public class UpdateFilmFragment extends Fragment {
     private Button updateButton;
     private MaterialSpinner spinner;
     private List<FilmResponse> posts;
-    CompositeDisposable compositeDisposable;
+    private CompositeDisposable compositeDisposable;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

@@ -3,16 +3,16 @@ package com.bstu.fit.yarmolik.cinema.Model;
 import java.util.List;
 
 public class BoughtTicket {
-    public String IdUser;
-    public String EmailUser;
-    public String Date;
-    public String StartTime;
-    public String EndTime;
-    public String Film;
-    public String CinemaInfo;
-    public String HallName;
-    public String SeanceId;
-    public List<String> Place;
+    private  String IdUser;
+    private String EmailUser;
+    private String Date;
+    private String StartTime;
+    private  String EndTime;
+    private String Film;
+    private  String CinemaInfo;
+    private String HallName;
+    private String SeanceId;
+    private List<String> Place;
 
     public BoughtTicket(String idUser, String emailUser, String date, String startTime, String endTime, String film, String cinemaInfo, String hallName, String seanceId, List<String> place) {
         IdUser = idUser;

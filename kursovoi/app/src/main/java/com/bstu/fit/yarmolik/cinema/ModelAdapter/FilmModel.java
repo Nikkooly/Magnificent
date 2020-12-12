@@ -3,17 +3,17 @@ package com.bstu.fit.yarmolik.cinema.ModelAdapter;
 import android.graphics.Bitmap;
 
 public class FilmModel {
-    String name;
-     String year;
-     Float rating;
-     String id;
+     private String name;
+     private String genre;
+     private Float rating;
+     private String id;
      //Bitmap image;
-    String link;
-    public FilmModel(String name, String year, Float rating,String link, String id){// Bitmap image){
+     private String link;
+    public FilmModel(String name, String genre, Float rating,String link, String id){// Bitmap image){
         this.name=name;
         //this.image=image;
         this.link=link;
-        this.year=year;
+        this.genre=genre;
         this.rating=rating;
         this.id=id;
     }
@@ -26,12 +26,12 @@ public class FilmModel {
         return name;
     }
 
-    public void setYear(String year) {
-        this.year = year;
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 
-    public String getYear() {
-        return year;
+    public String getGenre() {
+        return genre;
     }
 
     public void setRating(Float rating) {

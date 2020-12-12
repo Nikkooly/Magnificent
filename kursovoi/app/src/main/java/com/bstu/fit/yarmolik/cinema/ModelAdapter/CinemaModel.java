@@ -1,9 +1,9 @@
 package com.bstu.fit.yarmolik.cinema.ModelAdapter;
 
 public class CinemaModel {
-    String cardName;
-    int imageResourceId;
-    String address;
+    private String cardName;
+    private int imageResourceId;
+    private String address;
     public CinemaModel(int imageResourceId, String cardName,String address){
         this.cardName=cardName;
         this.imageResourceId=imageResourceId;

@@ -16,5 +16,10 @@
     <style name="ProgressBarStyle">
         <item name="colorAccent">@color/colorProgressBar</item>
     </style>
-
+    <style name="CustomInternetDialog" parent="android:Theme.DeviceDefault.Dialog">
+        <item name="DialogTitleAppearance">@android:style/TextAppearance.DeviceDefault</item>
+        <item name="DialogTitleText">Ожидаем интернет подключения…</item>
+        <item name="DialogSpotColor">@android:color/holo_blue_light</item>
+        <item name="DialogSpotCount">4</item>
+    </style>
 </resources>

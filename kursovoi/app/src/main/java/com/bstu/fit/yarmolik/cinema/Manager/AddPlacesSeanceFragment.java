@@ -66,7 +66,7 @@ private List<HallResponse> hallResponse;
 private FloatingActionButton fab;
 private String select="All";
 private EditText priceText;
-Calendar dateAndTime=Calendar.getInstance();
+private Calendar dateAndTime=Calendar.getInstance();
 private RadioButton buttonAll,buttonHalf;
 CompositeDisposable compositeDisposable;
 IMyApi iMyApi;

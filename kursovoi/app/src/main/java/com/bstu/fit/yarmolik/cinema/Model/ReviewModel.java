@@ -1,7 +1,7 @@
 package com.bstu.fit.yarmolik.cinema.Model;
 
 public class ReviewModel {
-    public String FilmId;
+    private String FilmId;
 
     public ReviewModel(String filmId) {
         FilmId = filmId;

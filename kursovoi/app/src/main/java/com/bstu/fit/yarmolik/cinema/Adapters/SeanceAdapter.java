@@ -1,5 +1,6 @@
 package com.bstu.fit.yarmolik.cinema.Adapters;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +27,7 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.SeanceView
     public static String timeStartSeance="";
     public static String timeEndSeance="";
     public static String hallDataSeance="";
+    private Context context;
     public SeanceAdapter(ArrayList<SeanceModel> seanceModels){ list=seanceModels;}
     public class SeanceViewHolder extends RecyclerView.ViewHolder{
         TextView hall,startTime,endTime;
@@ -34,6 +36,7 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.SeanceView
         Button addTicket;
         public SeanceViewHolder(View view){
             super(view);
+            context = view.getContext();
             idSeance="";
             hall=view.findViewById(R.id.hallSTextView);
             linearLayout=view.findViewById(R.id.linearCardLayout);
@@ -51,6 +54,7 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.SeanceView
         holder.hall.setText(list.get(position).getHallName());
         holder.startTime.setText(list.get(position).getStartTime());
         holder.endTime.setText(list.get(position).getEndTime());
+        //holder.linearLayout.setBackground(ContextCompat.getDrawable(context, R.drawable.card_edge));
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,6 +68,7 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.SeanceView
                     hallDataSeance=list.get(position).getHallName();
                 }
                 else{
+                    //holder.linearLayout.
                     holder.linearLayout.setBackground(ContextCompat.getDrawable(view.getContext(), R.drawable.card_edge));
                 }
             }

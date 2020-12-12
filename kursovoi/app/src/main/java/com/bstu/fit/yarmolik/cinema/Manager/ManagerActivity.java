@@ -8,6 +8,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -26,10 +27,24 @@ import com.bstu.fit.yarmolik.cinema.Login;
 import com.bstu.fit.yarmolik.cinema.R;
 
 public class ManagerActivity extends AppCompatActivity implements OnFragment1DataListener {
-Toolbar toolbar;
-Fragment currentFragment = null;
-ConstraintLayout fragmentPlaces;
-FragmentTransaction ft;
+private Toolbar toolbar;
+private Fragment currentFragment = null;
+private ConstraintLayout fragmentPlaces;
+private FragmentTransaction ft;
+private boolean isInFocus = false;
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        Log.d("FocusChange", "FOCUS = " + hasFocus);
+        isInFocus = hasFocus;
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (!isInFocus) finish();
+    }
     final int REQUEST_CODE_GALLERY = 999;
     @Override
     public void onOpenFragment2(String nameCinema, String nameHall, Integer countPlaces,
@@ -149,4 +164,8 @@ FragmentTransaction ft;
         Toast.makeText(ManagerActivity.this,"Навигация осуществляется только через меню",Toast.LENGTH_SHORT).show();
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
 }

@@ -31,13 +31,10 @@ import retrofit2.Response;
 
 public class CinemaFragment extends Fragment {
     private ArrayList<CinemaModel> listItems;
-    private RecyclerView MyRecyclerView;
     private RecyclerView recyclerView;
     private MyAdapter carAdapter;
     private IMyApi iMyApi;
     private  Integer roleId;
-    CheckInternetConnection checkInternetConnection;
-    public boolean checkInternetState;
     private List<CinemaResponce> cinema;
     private ArrayList<String> nameList;
     private ArrayList<String> idList;
@@ -51,20 +48,9 @@ public class CinemaFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_cinema, container, false);
         recyclerView=(RecyclerView) view.findViewById(R.id.recyclerView);
         init(view);
-        Bundle arguments = getActivity().getIntent().getExtras();
-        roleId= Login.userRoleId;
-        checkInternetConnection=new CheckInternetConnection();
-        if(checkInternetConnection.isOnline(getContext())) {
-            checkInternetState=true;
-            recyclerView.setVisibility(View.VISIBLE);
-            recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-            loadCinema();
-        }
-        else{
-            checkInternetState=false;
-            Toast.makeText(getContext(), "Нет подключения", Toast.LENGTH_LONG).show();
-        }
-
+        recyclerView.setVisibility(View.VISIBLE);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        loadCinema();
         return view;
     }
     private void init(View view){
@@ -73,6 +59,7 @@ public class CinemaFragment extends Fragment {
         idList= new ArrayList<>();
         adressList= new ArrayList<>();
         listItems=new ArrayList<CinemaModel>();
+        roleId= Login.userRoleId;
     }
     private void loadCinema(){
         Call<List<CinemaResponce>> call=iMyApi.getCinema();

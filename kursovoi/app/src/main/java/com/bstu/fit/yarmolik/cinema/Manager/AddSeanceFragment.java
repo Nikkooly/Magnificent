@@ -51,22 +51,22 @@ import retrofit2.Response;
 
 
 public class AddSeanceFragment extends Fragment {
-    TextView currentDateTime;
+    private TextView currentDateTime;
     private IMyApi iMyApi;
-    List<CinemaResponce> cinema;
-    List<HallResponse> hall;
-    TextView dataTextView;
-    List<FilmResponse> posts;
+    private List<CinemaResponce> cinema;
+    private List<HallResponse> hall;
+    private TextView dataTextView;
+    private List<FilmResponse> posts;
     private ArrayList<String> list, listHall, listFilm;
     private ArrayList<String> idList, idListHall, idListFilm;
     private ArrayList<Integer> countOfPlaces,durationOfTheFilm;
     private String chooseCinema="",chooseFilm="",chooseHall="";
     private MaterialSpinner cinemaSpinner,hallSpinner,filmSpinner;
-    CompositeDisposable compositeDisposable;
-    Button setDate,addSeanceButton;
+    private CompositeDisposable compositeDisposable;
+    private Button setDate,addSeanceButton;
     private Integer yearCalendar,month,day;
     private String date="";
-    Calendar dateAndTime=Calendar.getInstance();
+    private Calendar dateAndTime=Calendar.getInstance();
     private OnFragment1DataListener mListener;
     //Calendar dateAndTime=Calendar.getInstance();
     @Override

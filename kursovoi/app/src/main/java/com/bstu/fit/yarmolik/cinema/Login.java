@@ -11,6 +11,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.text.method.PasswordTransformationMethod;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewPropertyAnimator;
 import android.view.Window;
@@ -31,8 +32,6 @@ import androidx.core.content.ContextCompat;
 import com.bestsoft32.tt_fancy_gif_dialog_lib.TTFancyGifDialog;
 import com.bestsoft32.tt_fancy_gif_dialog_lib.TTFancyGifDialogListener;
 import com.bstu.fit.yarmolik.cinema.Fragments.MainActivity;
-import com.bstu.fit.yarmolik.cinema.LocalDataBase.DbHelper;
-import com.bstu.fit.yarmolik.cinema.LocalDataBase.WorksWithDb;
 import com.bstu.fit.yarmolik.cinema.Manager.ManagerActivity;
 import com.bstu.fit.yarmolik.cinema.Model.LoginUser;
 import com.bstu.fit.yarmolik.cinema.Remote.IMyApi;
@@ -41,6 +40,7 @@ import com.bstu.fit.yarmolik.cinema.Responces.GuestResponse;
 import com.bstu.fit.yarmolik.cinema.Responces.UserResponce;
 
 import java.util.List;
+import java.util.Objects;
 
 import dmax.dialog.SpotsDialog;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -69,14 +69,13 @@ public class Login extends AppCompatActivity {
     private Cursor c;
     public static String userId="",guestId,userEmail="",guestEmail,userLogin="",guestLogin;
     private Intent intent;
-    private WorksWithDb worksWithDb=new WorksWithDb();
     private CompositeDisposable compositeDisposable;
     private  final String APP_PREFERENCES = "user";
     private final String APP_PREFERENCES_LOGIN="login";
     private final String APP_PREFERENCES_PASSWORD="password";
-    private SQLiteDatabase database;
     private Switch showPasswordSwitch;
-    CheckInternetConnection checkInternetConnection;
+    private String loginValue,passwordValue;
+    private CheckInternetConnection checkInternetConnection;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,17 +89,14 @@ public class Login extends AppCompatActivity {
         getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_login);
         init();
+        checkInternetConnection.installListener(Login.this);
         noAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(stateInternet) {
+
                     Intent intent = new Intent(Login.this, Registration.class);
                     startActivity(intent);
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                }
-                else{
-                    Toast.makeText(Login.this, "Регистрация в оффлайн-режиме не доступна! ", Toast.LENGTH_SHORT).show();
-                }
             }
         });
         showPasswordSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -129,80 +125,68 @@ public class Login extends AppCompatActivity {
                 bookITextView.setVisibility(GONE);
                 rootView.setBackgroundColor(ContextCompat.getColor(Login.this, R.color.btnColor));
                 startAnimation();
-                if(checkInternetConnection.isOnline(Login.this)){
-                    stateInternet=true;
+
                     if(sharedPreferences.contains(APP_PREFERENCES_LOGIN)) {
                         loadWithSharedPreferences(sharedPreferences.getString(APP_PREFERENCES_LOGIN,""),sharedPreferences.getString(APP_PREFERENCES_PASSWORD,""));
                     }
-                }
-                else{
-                    stateInternet=false;
-                    AlertDialog.Builder builder = new AlertDialog.Builder(Login.this);
-                    builder.setTitle("Важное сообщение!")
-                            .setMessage("Отсутствует подключение к интернету. Для работы в приложенее требуется интернет соеденение.")
-                            .setIcon(R.drawable.app_icon)
-                            .setPositiveButton("ОК", new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int id) {
-                                    // Закрываем окно
-                                    dialog.cancel();
-                                }
-                            });
-                    builder.create();
-                    builder.show();
-                }
             }
         }.start();
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String loginValue = login.getText().toString();
-                String passwordValue = password.getText().toString();
-                boolean checkLogin = loginValue.matches("^[a-zA-Z][a-zA-Z0-9-_\\.]{1,20}$");
-                boolean checkPassword = passwordValue.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}$");
-                if (checkPassword == true && checkLogin == true) {
-                    if(stateInternet) {
+                try {
+                    loginValue = login.getText().toString();
+                    passwordValue = password.getText().toString();
+                    boolean checkLogin = loginValue.matches("^[a-zA-Z][a-zA-Z0-9-_\\.]{1,20}$");
+                    boolean checkPassword = passwordValue.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}$");
+                    if (checkPassword && checkLogin) {
+
                         AlertDialog alertDialog = new SpotsDialog.Builder()
                                 .setContext(Login.this)
                                 .build();
                         alertDialog.show();
-                        LoginUser user = new LoginUser(login.getText().toString(), Registration.md5(password.getText().toString()));
+                        LoginUser user = new LoginUser(Encryption.encryptString(loginValue), Encryption.encryptString(passwordValue));
                         Call<List<UserResponce>> call = iMyApi.checkLogin(user);
                         call.enqueue(new Callback<List<UserResponce>>() {
                             @Override
                             public void onResponse(Call<List<UserResponce>> call, Response<List<UserResponce>> response) {
-                                    for (UserResponce userResponce : response.body()) {
-                                        userId = userResponce.getId();
-                                        userRoleId = userResponce.getRoleId();
-                                        userEmail = userResponce.getEmail();
-                                        userLogin = userResponce.getLogin();
-                                        if (userRoleId == 1) {
-                                            alertDialog.dismiss();
-                                            intent = new Intent(Login.this, MainActivity.class);
-                                            intent.putExtra("stateInternetConnection", stateInternet);
-                                            if(checkBox.isChecked())
-                                                checkBoxChoose="OK";
-                                            else
-                                                checkBoxChoose="No";
-                                            if(checkBoxChoose.equals("OK")){
+                                for (UserResponce userResponce : response.body()) {
+                                    userId = userResponce.getId();
+                                    userRoleId = userResponce.getRoleId();
+                                    userEmail = userResponce.getEmail();
+                                    userLogin = userResponce.getLogin();
+                                    if (userRoleId == 1) {
+                                        alertDialog.dismiss();
+                                        intent = new Intent(Login.this, MainActivity.class);
+                                        intent.putExtra("stateInternetConnection", stateInternet);
+                                        if (checkBox.isChecked())
+                                            checkBoxChoose = "OK";
+                                        else
+                                            checkBoxChoose = "No";
+                                        if (checkBoxChoose.equals("OK")) {
+                                            try {
                                                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                                                editor.putString(APP_PREFERENCES_LOGIN, login.getText().toString());
-                                                editor.putString(APP_PREFERENCES_PASSWORD,Registration.md5(password.getText().toString()));
+                                                editor.putString(APP_PREFERENCES_LOGIN, Encryption.encryptString(loginValue));
+                                                editor.putString(APP_PREFERENCES_PASSWORD, Encryption.encryptString(passwordValue));
                                                 editor.apply();
                                             }
-                                            startActivity(intent);
-                                            clear();
-                                        } else if (userRoleId == 2) {
-                                            alertDialog.dismiss();
-                                            intent = new Intent(Login.this, ManagerActivity.class);
-                                            startActivity(intent);
-                                            clear();
+                                            catch(Exception ex){
+                                                Log.d("Exception: ", Objects.requireNonNull(ex.getMessage()));
+                                            }
                                         }
-                                        else if (userRoleId == 4) {
-                                            alertDialog.dismiss();
-                                            Toast.makeText(Login.this, "Неверный логин или пароль. Проверьте введенные данные!", Toast.LENGTH_SHORT).show();
-                                            userRoleId=0;
-                                        }
+                                        startActivity(intent);
+                                        clear();
+                                    } else if (userRoleId == 2) {
+                                        alertDialog.dismiss();
+                                        intent = new Intent(Login.this, ManagerActivity.class);
+                                        startActivity(intent);
+                                        clear();
+                                    } else if (userRoleId == 4 || userRoleId == null) {
+                                        alertDialog.dismiss();
+                                        Toast.makeText(Login.this, "Неверный логин или пароль. Проверьте введенные данные!", Toast.LENGTH_SHORT).show();
+                                        userRoleId = 0;
                                     }
+                                }
 
                             }
 
@@ -212,29 +196,23 @@ public class Login extends AppCompatActivity {
                                 Toast.makeText(Login.this, "Некорректные данные", Toast.LENGTH_LONG).show();
                             }
                         });
+                    } else {
+                        Toast.makeText(Login.this, "Некорректные данные", Toast.LENGTH_SHORT).show();
                     }
-                    else
-                        {
-                            Toast.makeText(Login.this, "Отсутствует соеденение с интернетом", Toast.LENGTH_LONG).show();
-                    }
-                } else {
-                    Toast.makeText(Login.this, "Некорректные данные", Toast.LENGTH_SHORT).show();
+                }
+                catch(Exception ex){
+                    Log.d("Exception: ", Objects.requireNonNull(ex.getMessage()));
                 }
             }
         });
     }
     public void Skip(View view){
-        if(stateInternet) {
             userRoleId = 3;
             getGuestInfo(3);
             intent = new Intent(Login.this, MainActivity.class);
             startActivity(intent);
             this.overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
             clear();
-        }
-        else{
-            Toast.makeText(Login.this, "Отсутствует интернет подключение, вход возможен только авторизованным пользователям! ", Toast.LENGTH_SHORT).show();
-        }
     }
     private void init() {
         bookIconImageView = findViewById(R.id.bookIconImageView);
@@ -284,22 +262,27 @@ public class Login extends AppCompatActivity {
         super.onStop();
     }
     public void getGuestInfo(Integer id){
-        Call<List<GuestResponse>> call=iMyApi.getGuestInfo(id);
-        call.enqueue(new Callback<List<GuestResponse>>() {
-            @Override
-            public void onResponse(Call<List<GuestResponse>> call, Response<List<GuestResponse>> response) {
-                for(GuestResponse guestResponse:response.body()){
-                    userId=guestResponse.getId();
-                    userLogin=guestResponse.getLogin();
-                    userEmail=guestResponse.getEmail();
+        try {
+            Call<List<GuestResponse>> call = iMyApi.getGuestInfo(id);
+            call.enqueue(new Callback<List<GuestResponse>>() {
+                @Override
+                public void onResponse(Call<List<GuestResponse>> call, Response<List<GuestResponse>> response) {
+                    for (GuestResponse guestResponse : response.body()) {
+                        userId = guestResponse.getId();
+                        userLogin = guestResponse.getLogin();
+                        userEmail = guestResponse.getEmail();
+                    }
                 }
-            }
 
-            @Override
-            public void onFailure(Call<List<GuestResponse>> call, Throwable t) {
+                @Override
+                public void onFailure(Call<List<GuestResponse>> call, Throwable t) {
 
-            }
-        });
+                }
+            });
+        }
+        catch(Exception ex){
+            Log.d("Exception: ", Objects.requireNonNull(ex.getMessage()));
+        }
     }
     private void clear(){
         login.setText(null);
@@ -328,16 +311,4 @@ public class Login extends AppCompatActivity {
             }
         });
     }
-    /*public void onCheckboxClicked(View view) {
-
-        if(fingerCheck.isChecked()){
-            promptInfo = new BiometricPrompt.PromptInfo.Builder()
-                    .setTitle("Magnificent Touch")
-                    .setDescription("Коснитесь сканера отпечатка пальца и дождитесь потверждения")
-                    .setNegativeButtonText("Exit")
-                    .build();
-            biometricPrompt.authenticate(promptInfo);
-        }
-    }*/
-
 }

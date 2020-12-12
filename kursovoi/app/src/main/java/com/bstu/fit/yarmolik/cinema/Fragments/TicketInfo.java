@@ -21,8 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bstu.fit.yarmolik.cinema.Adapters.SeanceAdapter;
-import com.bstu.fit.yarmolik.cinema.LocalDataBase.DbHelper;
-import com.bstu.fit.yarmolik.cinema.LocalDataBase.WorksWithDb;
+import com.bstu.fit.yarmolik.cinema.Encryption;
 import com.bstu.fit.yarmolik.cinema.Login;
 import com.bstu.fit.yarmolik.cinema.Model.BoughtTicket;
 import com.bstu.fit.yarmolik.cinema.R;
@@ -35,8 +34,10 @@ import com.bstu.fit.yarmolik.cinema.Responces.PlacesResponse;
 import com.bstu.fit.yarmolik.cinema.Responces.TicketStaticResponse;
 import com.squareup.picasso.Picasso;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Properties;
 
 /*import javax.activation.DataHandler;
@@ -106,8 +107,18 @@ private ImageView imageView,imageView2;
                 .setContext(TicketInfo.this)
                 .build();
         alertDialog.show();
-        if(Login.userRoleId==1){
-            emailEditText.setText(Login.userEmail);
+        try {
+            if (Login.userRoleId == 1) {
+                try {
+                    emailEditText.setText(Encryption.decryptString(Login.userEmail));
+                }
+                catch(Exception ex){
+                    Log.d("Exception: ",ex.getMessage());
+                }
+            }
+        }
+        catch (NullPointerException e) {
+            Log.d("Exception", e.getMessage());
         }
         selectedTickets=(ArrayList<String>) getIntent().getSerializableExtra("list");
         loadFilms(idFilm);
@@ -228,11 +239,16 @@ private ImageView imageView,imageView2;
         call.enqueue(new Callback<FilmResponse>() {
             @Override
             public void onResponse(Call<FilmResponse> call, Response<FilmResponse> response) {
-                Picasso.get().load(response.body().getPoster().toString()).into(imageView);
-                Picasso.get().load(response.body().getPoster().toString()).into(imageView2);
-                nameFilm=response.body().getName().toString();
-                nameFilmTextView.setText(response.body().getName());
-                genreTextView.setText(response.body().getGenre());
+                try {
+                    Picasso.get().load(response.body().getPoster().toString()).into(imageView);
+                    Picasso.get().load(response.body().getPoster().toString()).into(imageView2);
+                    nameFilm = response.body().getName().toString();
+                    nameFilmTextView.setText(response.body().getName());
+                    genreTextView.setText(response.body().getGenre());
+                }
+                catch(Exception ex){
+                    Log.d("Exception: ", Objects.requireNonNull(ex.getMessage()));
+                }
             }
 
             @Override

@@ -2,6 +2,7 @@ package com.bstu.fit.yarmolik.cinema.Fragments;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,6 +29,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Random;
 
 import retrofit2.Call;
@@ -62,19 +64,12 @@ public class SliderFragment extends Fragment {
         relativeLayout=view.findViewById(R.id.sliderRelative);
         roleId= Login.userRoleId;
         checkInternetConnection=new CheckInternetConnection();
-        if(checkInternetConnection.isOnline(getContext())) {
-            checkInternetState=true;
             relativeLayout.setVisibility(View.VISIBLE);
             /*for (int i = 0; i < IMAGES.length; i++)
                 ImagesArray.add(IMAGES[i]);
             for (int j = 0; j < DESCRIPTION.length; j++)
                 DescriptionArray.add(DESCRIPTION[j]);*/
             loadFilms(circlePageIndicator);
-        }
-        else{
-            checkInternetState=false;
-            Toast.makeText(getContext(),"Нет интернета", Toast.LENGTH_SHORT).show();
-        }
         return view;
     }
     private void init(View view){
@@ -86,69 +81,73 @@ public class SliderFragment extends Fragment {
         idFilm=new ArrayList<>();
     }
     private void loadFilms(CirclePageIndicator indicator){
-        Call<List<FilmResponse>> call=iMyApi.getFilms();
-        call.enqueue(new Callback<List<FilmResponse>>() {
-            @Override
-            public void onResponse(Call<List<FilmResponse>> call, Response<List<FilmResponse>> response) {
-                if(!response.isSuccessful()){
-                    Toast.makeText(getContext(), response.code(), Toast.LENGTH_LONG).show();
+        try {
+            Call<List<FilmResponse>> call = iMyApi.getFilms();
+            call.enqueue(new Callback<List<FilmResponse>>() {
+                @Override
+                public void onResponse(Call<List<FilmResponse>> call, Response<List<FilmResponse>> response) {
+                    if (!response.isSuccessful()) {
+                        Toast.makeText(getContext(), response.code(), Toast.LENGTH_LONG).show();
+                    } else {
+                        for (FilmResponse post : response.body()) {
+                            DESCRIPTION.add(post.getName());
+                            IMAGES.add(post.getPoster());
+                            idFilm.add(post.getId());
+                        }
+                        Integer count = 5;
+                        if (IMAGES.size() > count) {
+                            int[] result = sampleRandomNumbersWithoutRepetition(0, IMAGES.size(), 5);
+                            for (int i = 0; i < 5; i++) {
+                                ImagesArray.add(IMAGES.get(result[i]));
+                                DescriptionArray.add(DESCRIPTION.get(result[i]));
+                                IdArray.add(idFilm.get(result[i]));
+                            }
+                        } else {
+                            for (int i = 0; i < IMAGES.size(); i++) {
+                                int[] result = sampleRandomNumbersWithoutRepetition(0, IMAGES.size(), IMAGES.size());
+                                ImagesArray.add(IMAGES.get(result[i]));
+                                DescriptionArray.add(DESCRIPTION.get(result[i]));
+                                IdArray.add(idFilm.get(result[i]));
+                            }
+                        }
+
+                        mPager.setOffscreenPageLimit(2);
+                        mPager.setAdapter(new SlidingImage_Adapter(getContext(), ImagesArray, DescriptionArray, IdArray));
+
+                        indicator.setViewPager(mPager);
+                        final float density = getResources().getDisplayMetrics().density;
+                        indicator.setRadius(5 * density);
+                        NUM_PAGES = IMAGES.size();
+                        // Pager listener over indicator
+                        indicator.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+
+                            @Override
+                            public void onPageSelected(int position) {
+                                currentPage = position;
+                            }
+
+                            @Override
+                            public void onPageScrolled(int pos, float arg1, int arg2) {
+
+                            }
+
+                            @Override
+                            public void onPageScrollStateChanged(int pos) {
+
+                            }
+                        });
+                    }
                 }
-                else {
-                    for (FilmResponse post : response.body()) {
-                        DESCRIPTION.add(post.getName());
-                        IMAGES.add(post.getPoster());
-                        idFilm.add(post.getId());
-                    }
-                    Integer count=5;
-                    if(IMAGES.size()>count){
-                        int[] result=sampleRandomNumbersWithoutRepetition(0,IMAGES.size(),5);
-                        for(int i=0;i<5;i++){
-                            ImagesArray.add(IMAGES.get(result[i]));
-                            DescriptionArray.add(DESCRIPTION.get(result[i]));
-                            IdArray.add(idFilm.get(result[i]));
-                        }
-                    }
-                    else {
-                        for (int i = 0; i < IMAGES.size(); i++) {
-                            int[] result=sampleRandomNumbersWithoutRepetition(0,IMAGES.size(),IMAGES.size());
-                            ImagesArray.add(IMAGES.get(result[i]));
-                            DescriptionArray.add(DESCRIPTION.get(result[i]));
-                            IdArray.add(idFilm.get(result[i]));
-                        }
-                    }
 
-                    mPager.setOffscreenPageLimit(2);
-                    mPager.setAdapter(new SlidingImage_Adapter(getContext(), ImagesArray, DescriptionArray,IdArray));
-
-                    indicator.setViewPager(mPager);
-                    final float density = getResources().getDisplayMetrics().density;
-                    indicator.setRadius(5 * density);
-                    NUM_PAGES = IMAGES.size();
-                    // Pager listener over indicator
-                    indicator.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-
-                        @Override
-                        public void onPageSelected(int position) {
-                            currentPage = position;
-                        }
-
-                        @Override
-                        public void onPageScrolled(int pos, float arg1, int arg2) {
-
-                        }
-
-                        @Override
-                        public void onPageScrollStateChanged(int pos) {
-
-                        }
-                    });
+                @Override
+                public void onFailure(Call<List<FilmResponse>> call, Throwable t) {
+                    Toast.makeText(getContext(), t.getMessage(), Toast.LENGTH_LONG).show();
                 }
-            }
-            @Override
-            public void onFailure(Call<List<FilmResponse>> call, Throwable t) {
-                Toast.makeText(getContext(), t.getMessage(), Toast.LENGTH_LONG).show();
-            }
-        });
+            });
+        }
+        catch(Exception ex){
+            Log.d("Exception: ", Objects.requireNonNull(ex.getMessage()));
+        }
     }
     public static int[] sampleRandomNumbersWithoutRepetition(int start, int end, int count) {
         Random rng = new Random();
