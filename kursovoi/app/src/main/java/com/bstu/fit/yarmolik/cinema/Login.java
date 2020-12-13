@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewPropertyAnimator;
 import android.view.Window;
@@ -288,7 +289,6 @@ public class Login extends AppCompatActivity {
         login.setText(null);
         password.setText(null);
     }
-
     private void loadWithSharedPreferences(String login,String password){
         LoginUser user = new LoginUser(login, password);
         Call<List<UserResponce>> call = iMyApi.checkLogin(user);
@@ -311,4 +311,5 @@ public class Login extends AppCompatActivity {
             }
         });
     }
+    
 }

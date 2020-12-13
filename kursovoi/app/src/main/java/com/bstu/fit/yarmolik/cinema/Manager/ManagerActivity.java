@@ -73,7 +73,7 @@ private boolean isInFocus = false;
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_manager);
         toolbar=findViewById(R.id.toolbar);
-        toolbar.setTitle("Magnifisent");
+        toolbar.setTitle("Magnificent");
         setSupportActionBar(toolbar);
         fragmentPlaces=findViewById(R.id.fragmentPlaces);
     }

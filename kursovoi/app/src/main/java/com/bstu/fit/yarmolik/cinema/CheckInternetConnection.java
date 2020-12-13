@@ -2,6 +2,7 @@ package com.bstu.fit.yarmolik.cinema;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.KeyguardManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -9,14 +10,20 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Build;
 import android.os.Bundle;
+import android.telecom.CallScreeningService;
 import android.util.Log;
+import android.view.KeyEvent;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import dmax.dialog.SpotsDialog;
 
-public class CheckInternetConnection extends Activity {
+public class CheckInternetConnection extends AppCompatActivity {
     private BroadcastReceiver broadcastReceiver;
     private AlertDialog alertDialog;
+    public static boolean networkState = true;
 
     public void installListener(Context context) {
 
@@ -65,7 +72,9 @@ public class CheckInternetConnection extends Activity {
     private void onNetworkUp(Context context){
         if(alertDialog!=null){
             alertDialog.cancel();
+            networkState = true;
         }
 
     }
+
 }
