@@ -127,12 +127,15 @@
 <p align="center">
   <img src="https://lh3.googleusercontent.com/XjwU81d9xZRZ2xoz1r4Dk5OWycwaQLIKoOrZwk6oiLKQuhw2TUxPKJS8XBGodJkPepogOqVLSnKbUssTTAPnGEzUP4Yr4uoGv3ceFJBH_hx5iMsxClsmgsllnn3zM8Cg-jCrzlagcZjSSbZXZqN1RgdTKfpG-uczJFCrsjVLq9gl5JNnBy8AIcs2PO8xBxlpRDwEk-lNddnPl2VKuHnm_6X9udVvO6RSnqUWOPZ6KEWFqwfL4lvEK9pC_sNxT6TludmMWdmA4RwGV-QBaL2V_kQ06twoZiX3Bhjpd2akEQw03cgNifLljLlRCcmutVclNLtvCQmHxWzz86PSLt208frTZ4N09QjXm7RMn0TPFdM40U_Rod-tMtOMqx2S2hX2sBICjXc8q0BF441tUcQPKfBlYJURgDzvq-_wJnYRtq6oAMxo7OzFa2uBsMvm65QXcoRYDD6VCsg_KVt_aeJoux4egvmlav7FkiVEBAqmSWShNLNF0REqlPN4C8KYDUVcYbbk_IcKnW30nI8IvzaHdi4n5CjkkCdbTOK0nYre-ChPMMWVsoNPVALrqV-IjUGbeQ2dJ2bZT0M_Uo73Rlh-Iilagb2YEjV_xftYmZ5ahvEsfW3Qzcy0LAt-rhKNXbdsTBT_hdYrHp457YH2VTp2BCE73SpajcO1zr7Ex53UUX06XVakKTuuAonDVBKJeg=w378-h703-no?authuser=0"  width="250" title="Login">
 </p>
+
+<p>
 Выполнение общих требований
-1.	Минимальное количество экранов 8 – реализовано
-2.	Использование хранилища (защитив данные) - Использование удаленного хранилища на базе SQL Server(логин, пароль), шифрование данных пользователя алгоритмом Blowfish
-3.	Защитить приложение авторизацией - реализовано (user входит в приложение под login и password)
-4.	Реализовать зашиту приложения – в приложении на экране регистрации и авторизации нельзя делать скриншот, также менеджер при сворачивании приложении, должен осуществить повторную авторизацию.  
-5.	Использовать обфускацию проекта - ДА (c помощью proguard)
+*	Минимальное количество экранов 8 – реализовано
+*	Использование хранилища (защитив данные) - Использование удаленного хранилища на базе SQL Server(логин, пароль), шифрование данных пользователя алгоритмом Blowfish
+*	Защитить приложение авторизацией - реализовано (user входит в приложение под login и password)
+*	Реализовать зашиту приложения – в приложении на экране регистрации и авторизации нельзя делать скриншот, также менеджер при сворачивании приложении, должен осуществить повторную авторизацию.  
+*	Использовать обфускацию проекта - ДА (c помощью proguard)
+</p>
  
 
 
