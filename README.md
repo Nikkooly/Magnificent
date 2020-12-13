@@ -36,7 +36,6 @@
 </p>
 
 <p> Приложение может осуществлять работу только при включенном интернет-соеденении, в случае отсутствия интернета будет отображаться окно, которое будет закрыто автоматически при появлении интернета. Для реализации этой функции использовался BroadcastReciever.
-  
- <p align ="center">
-  <video src="https://photos.google.com/album/AF1QipP0i5TTm7fz7tI3JaZdvFF-DitNkjqxob90qjP2/photo/AF1QipNtdc7jxJveaaZS31kibC6IUWaktWt0_HXgapyW" controls></video> 
-  </p>
+ 
+ [![Тут текст](https://img.youtube.com/vi/RHPYGwVQB2o/0.jpg)](https://youtu.be/RHPYGwVQB2o)
+
