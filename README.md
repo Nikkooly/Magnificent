@@ -21,7 +21,7 @@
   <img src="https://lh3.googleusercontent.com/pw/ACtC-3fgm3XnoyuIvc7syedWTHNMld9eOrIqWk02lDw7TxshdrbJEhFx7Vd95VoLphhKGNJ1kJSIU3rSB7Yn-4oa0Kws6ikN48AGB3vKLXZprb6pGWA7zaCytH9TkUmMkQ3l8sLCIoX3xhLmu0PcJ2NL8eyO=w373-h705-no?authuser=0" width="350" title="Login">
 </p>
  
-<p>Через него будет осуществляться вход в приложение. Для авторизации требуется ввести логин и пароль. Имеется валидация логина и пароля. Для того чтобы просмотреть введенный пароль имеется ползунок "Показать пароль". В случае успешной авторизации, в зависимости от роли, пользователь перейдет к окну, где отображается слайдер с доступными фильмами, менеджер, к окну менеджера. </p>
+<p>Через него будет осуществляться вход в приложение. Для авторизации требуется ввести логин и пароль. Имеется валидация логина и пароля. Для того чтобы просмотреть введенный пароль имеется ползунок "Показать пароль". В случае успешной авторизации, в зависимости от роли, пользователь перейдет к окну, где отображается слайдер с доступными фильмами, менеджер, к окну менеджера. При нажатии на иконку приложения будет осуществлен вход под ролью Гость.</p>
 <p>В окне авторизации, а также окне регистрации присутствует ограничение на невозможность создания скриншотов экрана. Если пользователь не зарегистрирован он может перейти к окну регистрации нажав на "У меня нет аккаунта".</p>
 
 <p align="center">
@@ -38,6 +38,6 @@
 <p> Приложение может осуществлять работу только при включенном интернет-соеденении, в случае отсутствия интернета будет отображаться окно, которое будет закрыто автоматически при появлении интернета. Для реализации этой функции использовался BroadcastReciever.
  
 <p align="center">
-  <img src="https://lh3.googleusercontent.com/FRkxgE91YPhXIrhtCxjHST6A01JudDNIDZGN-v13otQz1rj5a4YwMZcPt1Re1r8gFDaZA7NFzmDjpQSL_b2FFTmE_hPRjSvjqOjvy6YJamDaKrRTDu7kxsGxcnOrZq2e1PveI-GRqmZIN8E6tt9i_JHZZ_D_xu-hpATbHTilb-sSu9UTz65t1VHyAVCYvV-zEyy31uJBW62_iyp4Yp-yFqnbdSIBd9kkjVrdx50ECpk5RRxm3je2MICLqb1_-4w1lDeVpH_6ldWGlcKNnK7dd9q8BdqdlnVP2Fp0tt0Z8D3ShOoyRYqvBgdvvgKjlsLtaYdV0InA4PJtnfvlM46JooxqYnPVOpP6r7Xp0EmcFE1ZA9vW3zHZMenFLmnkCy9vEyQAyRTjGGw2YU9Vu0iTpUa9TueEeqGrrvlbTBtatLrtXtQ953qteGjlEbKz6VobVQaDOvR4qOTIB8RnkXk74EVdTwbQMzSSuCp3Ksg-wtgivzPh_fedr_g05wF9Brt_AjntqufcLj4gfcZiMsn-ITng3sH9xmtVbcfjzmz90FOaiPe825iU7_4b_Zj0WcUvjplS9k2Ii4_XAs6AZiXAS70fYUFblxHRvYLDaXNPCrslQnIO2PADW2uDbFjWLr6llAMANC8niKhCJtQR9kQr8CC7JJwZRX-Cijk9wzQV_L54stfWdGdMC-gYfzcEbQ=w454-h908-no?authuser=0" title="Login">
+  <img src="https://lh3.googleusercontent.com/FRkxgE91YPhXIrhtCxjHST6A01JudDNIDZGN-v13otQz1rj5a4YwMZcPt1Re1r8gFDaZA7NFzmDjpQSL_b2FFTmE_hPRjSvjqOjvy6YJamDaKrRTDu7kxsGxcnOrZq2e1PveI-GRqmZIN8E6tt9i_JHZZ_D_xu-hpATbHTilb-sSu9UTz65t1VHyAVCYvV-zEyy31uJBW62_iyp4Yp-yFqnbdSIBd9kkjVrdx50ECpk5RRxm3je2MICLqb1_-4w1lDeVpH_6ldWGlcKNnK7dd9q8BdqdlnVP2Fp0tt0Z8D3ShOoyRYqvBgdvvgKjlsLtaYdV0InA4PJtnfvlM46JooxqYnPVOpP6r7Xp0EmcFE1ZA9vW3zHZMenFLmnkCy9vEyQAyRTjGGw2YU9Vu0iTpUa9TueEeqGrrvlbTBtatLrtXtQ953qteGjlEbKz6VobVQaDOvR4qOTIB8RnkXk74EVdTwbQMzSSuCp3Ksg-wtgivzPh_fedr_g05wF9Brt_AjntqufcLj4gfcZiMsn-ITng3sH9xmtVbcfjzmz90FOaiPe825iU7_4b_Zj0WcUvjplS9k2Ii4_XAs6AZiXAS70fYUFblxHRvYLDaXNPCrslQnIO2PADW2uDbFjWLr6llAMANC8niKhCJtQR9kQr8CC7JJwZRX-Cijk9wzQV_L54stfWdGdMC-gYfzcEbQ=w454-h908-no?authuser=0"  width="350" title="Login">
 </p>
 
