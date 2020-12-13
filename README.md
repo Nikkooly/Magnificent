@@ -93,3 +93,19 @@
 <p align="center">
   <img src="https://lh3.googleusercontent.com/n-MsMe7Ms9uKO5GZ6I-7a5P76aR70HfXNR89XfaRoEjZMo9QftsZ4rpXdb4DbBc0qVUIWVRsjGRS3jnip1-5y3H1xX6GuuPtBjkmFs6vRNTi_TkwDCRopVzXOHW8hXHtU17IOd5y-rusRMd_b4squc4j4rbxY3bBkZJk7EI4lswnxNQtmcUjY_lt0StChuT8sxBy0Q40M1EwP6VBpnSW3kjargeIfyUvTP49L_2obog0hL92_1JYd-MSWEqYDjtml-u3VrwGgTofgCQB4zkC4MEghiy_d6Iih5gYVHciSbO4gr2h_pl2tydNSFvxliHJfzGPGxUxTY1o8BM19IAGUNG895CFF1zZVlBn6Ft0cxmDRQVWbV7h5X6VA2SZYhSrn_0NSzSpmPNuOT7pgHBjNoqbmnFyL9KI3Lk4jQb1JpHVDGNrv1VMWH7ZakgfdWWG8id7GJc5l5w-LYv8CqhRJAtCI4AUeh-5YEBsWzyFi8DBRN9hWsR6ufxJZ6PD9P9g1MUuf2M-0ILLhhVxodk9nY0mFOM39A9mgV41X8X3l2bj7lAZnyDtV_GYFIr8KiPTCfS8ZH9X-5IHWpENy3qYgVa7iFC51TFwkTMyKatvfWiyTinD9b6O2lP_rElbqGlMHPvS8WiyYdZJanGofaM8RcWp8KFJpuyVsAzw9q1QGj3t41FmeRtpDkrOIog8Zg=w370-h697-no?authuser=0"  width="250" title="Login">
 </p>
+
+<p>Перейдем к описанию функционала менеджера. После успешной авторизации он попадает в окно менеджера</p>
+
+<p align="center">
+  <img src="https://lh3.googleusercontent.com/BpM9wp7MnPLybwOoC-r9b6cdtNcNJZ37qZqFkW400QuZaTi2cmTPLw5cO0lq0g01DGDsOF0D_2yLHjgo8vKNiaAeAVgMmzX7GzNC64_j6R47ytKw_RCN-NQecGyYkcbxFPd5D8db-xdJyYadzMSm-LXcWpqJwGFHzGCmlKO_qTA56PryL2kpto4PJhKR8LL4cIfZxZgl8Z_4YT4gnryqq87FBDGUq5yLsm9ttk5D1m3iC8VFn6EiGhD-F5WP1W3tTjYfmLhF9cY9GT3JfeQ5EeBHCuzKaFJ8M3lKuqjHYyW6TH9JguPdL2QUL8_tS17AcgxcjtkfgRMeD5DMEqucWv2g5jAagjpCSDNj-XPuw7VCrmT6a-agJnXz_HaW--gH8ULtvWKdNDDfJuexTduz0Dp4DcJR6C5qp0IzEDSa-KqyX3fnXkruTxfYcTJjNyHjU7PeY4DEmPxpXvOufPQe9F3OUc6Yb3ttjI7dpPdF8j4oOC2vKh-jr2ehyzKhjOKidsfjn1kHDN_h9fcqVclCmOmXXWggiIXl4SnqclQ-t1C4fZukqgZWcFOfY-K6tumFPAwMI-malBlWljQMT5PrtPcGIpyHxylZHb5MY2vP1xR8evQyo9t7lJNLZgTpeY-g0wInDX96oNB-LuiEWRBAdaq2-rFtA1HfAPyQpggI05NOdkvNaXApWC3WmD4Czw=w377-h705-no?authuser=0"  width="250" title="Login">
+</p>
+
+Выполнение общих требований
+1.	Минимальное количество экранов 8 – реализовано
+2.	Использование хранилища (защитив данные) - Использование удаленного хранилища на базе SQL Server(логин, пароль), шифрование данных пользователя алгоритмом Blowfish
+3.	Защитить приложение авторизацией - реализовано (user входит в приложение под login и password)
+4.	Реализовать зашиту приложения – в приложении на экране регистрации и авторизации нельзя делать скриншот, также менеджер при сворачивании приложении, должен осуществить повторную авторизацию.  
+5.	Использовать обфускацию проекта - ДА (c помощью proguard)
+ 
+
+
