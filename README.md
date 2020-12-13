@@ -37,5 +37,7 @@
 
 <p> Приложение может осуществлять работу только при включенном интернет-соеденении, в случае отсутствия интернета будет отображаться окно, которое будет закрыто автоматически при появлении интернета. Для реализации этой функции использовался BroadcastReciever.
  
- [![Тут текст](https://img.youtube.com/vi/RHPYGwVQB2o/0.jpg)](https://youtu.be/RHPYGwVQB2o)
+<p align="center">
+  <img src="https://lh3.googleusercontent.com/whmJmit7gr4A0tHelGuDssB0_YA34Enx8q396Z3y-xeZp_FIz7T68Lhc2pa9FAzoPm0-OYMWxsb8LVUPk8VYCSz61PRZdJYxxgqRbxcIRai-NT3ttOFzT2Sd4FaP2KmqzkeB3oHE4g3CEEYUnSHy5AWlFMIZ0t--Yi1SiWDo8VUCvwnB1sRcUH5SSAwNy-rixV1u8CGITN3Yu98VoxBDy26wXmxNqq4-j5_uebvNROggg0PPQYpF_lnogOOy2aw95IWhpOZFmrWgYHKL2AmGWYA4lKSfbSyq63SNT7J0PcW4pBplMXsDG_EA50zPD_yaNULkOjsEXMBTJ6TXM_rR8xM3emxJAQ-z3D6QjtJx7m1MiSEXj59jn5fJpAoAZOEIYcbrHnqwhAkMuDpUWv-USX9CsOF2wOt6CtiIsbBKEtbEhyc2VoaCSjpgp9JtPGtk43bdLoVSHUvXThED0xqmv0iKdlP0FQDxsuKJBdIJzapYuBx32MnBwGw7egVstE7ZYHNAbthef8cu7FiwonQRJYFTegYFrWLn0cC96lP8IO0Q9eDB_geQ0vq4iWk1dfdtxU-HAiS9OzC_hKzMPZdSe_3Oxycg85OdEwCEae6SsGCoHVKF167BSeba0h_FWadsWdt7Dv5PoSKcyEdMcTWCODVs-U3tshmFQiqqbtjX963bZuaiayaZ4dht1NZl1w=w360-h720-no?authuser=0" width="350" title="Login">
+</p>
 
