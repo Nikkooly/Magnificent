@@ -21,7 +21,7 @@
   <img src="https://lh3.googleusercontent.com/pw/ACtC-3fgm3XnoyuIvc7syedWTHNMld9eOrIqWk02lDw7TxshdrbJEhFx7Vd95VoLphhKGNJ1kJSIU3rSB7Yn-4oa0Kws6ikN48AGB3vKLXZprb6pGWA7zaCytH9TkUmMkQ3l8sLCIoX3xhLmu0PcJ2NL8eyO=w373-h705-no?authuser=0" width="350" title="Login">
 </p>
  
-<p>Через него будет осуществляться вход в приложение. Для авторизации требуется ввести логин и пароль. Имеется валидация логина и пароля. Для того чтобы просмотреть введенный пароль имеется ползунок "Показать пароль". Также имеется автоматический входа при нажатии на Checkbox "Не выходить". Для этого используется SharedPreferences, все данные хранятся в зашифрованном виде алгоритмом BlowFish. В случае успешной авторизации, в зависимости от роли, пользователь перейдет к окну, где отображается слайдер с доступными фильмами, менеджер, к окну менеджера. При нажатии на иконку приложения будет осуществлен вход под ролью Гость.</p>
+<p>Через него будет осуществляться вход в приложение. Для авторизации требуется ввести логин и пароль. Имеется валидация логина и пароля. Для того чтобы просмотреть введенный пароль имеется ползунок "Показать пароль". Также имеется автоматический вход при нажатии на Checkbox "Не выходить". Для этого используется SharedPreferences, все данные хранятся в зашифрованном виде алгоритмом BlowFish. В случае успешной авторизации, в зависимости от роли, пользователь перейдет к окну, где отображается слайдер с доступными фильмами, менеджер, к окну менеджера. При нажатии на иконку приложения будет осуществлен вход под ролью Гость.</p>
 <p>В окне авторизации, а также окне регистрации присутствует ограничение на невозможность создания скриншотов экрана. Если пользователь не зарегистрирован он может перейти к окну регистрации нажав на "У меня нет аккаунта".</p>
 
 <p align="center">
@@ -41,4 +41,15 @@
   <img src="https://lh3.googleusercontent.com/FRkxgE91YPhXIrhtCxjHST6A01JudDNIDZGN-v13otQz1rj5a4YwMZcPt1Re1r8gFDaZA7NFzmDjpQSL_b2FFTmE_hPRjSvjqOjvy6YJamDaKrRTDu7kxsGxcnOrZq2e1PveI-GRqmZIN8E6tt9i_JHZZ_D_xu-hpATbHTilb-sSu9UTz65t1VHyAVCYvV-zEyy31uJBW62_iyp4Yp-yFqnbdSIBd9kkjVrdx50ECpk5RRxm3je2MICLqb1_-4w1lDeVpH_6ldWGlcKNnK7dd9q8BdqdlnVP2Fp0tt0Z8D3ShOoyRYqvBgdvvgKjlsLtaYdV0InA4PJtnfvlM46JooxqYnPVOpP6r7Xp0EmcFE1ZA9vW3zHZMenFLmnkCy9vEyQAyRTjGGw2YU9Vu0iTpUa9TueEeqGrrvlbTBtatLrtXtQ953qteGjlEbKz6VobVQaDOvR4qOTIB8RnkXk74EVdTwbQMzSSuCp3Ksg-wtgivzPh_fedr_g05wF9Brt_AjntqufcLj4gfcZiMsn-ITng3sH9xmtVbcfjzmz90FOaiPe825iU7_4b_Zj0WcUvjplS9k2Ii4_XAs6AZiXAS70fYUFblxHRvYLDaXNPCrslQnIO2PADW2uDbFjWLr6llAMANC8niKhCJtQR9kQr8CC7JJwZRX-Cijk9wzQV_L54stfWdGdMC-gYfzcEbQ=w454-h908-no?authuser=0"  width="350" title="Login">
 </p>
 
-<p>После успешной авторизации пользователь попадает на экран где он может просмотреть фильмы доступные в кинотеатре. При помощи PageViewer он может их перелистывать </p>
+<p>После успешной авторизации пользователь попадает на экран где он может просмотреть фильмы доступные в кинотеатре. При помощи PageViewer он может их перелистывать.</p>
+
+<p align="center">
+  <img src="https://lh3.googleusercontent.com/s6IgBuCoSkEPiaRJgN2KXb66MfsAeUmFGe47r2NWV-mtwhWcuxJXzjNhDVzdVI_HgHjU7vYs_SS_r04mJbxzy_SozM6EX1zd3lX3pQ6bicU7ZYbFR3NDNTkny1SD9jPdMaTwR2TtxZ5hjU8XaxhyS-nq_1IMwKRkIxjIrCKQIUvNC6do2M7h93ZXRlLAAPlkybzGfP6fS4ZKw2bOdcX6Fq9rPKgrvQ3l5GHrxEcGUsgDUahj7j0iOvfkfh9El7YCGPgOPUIplX6h7ZowiI51Dt9yGdL5Nweoai9iztKZQ29IgnprwsmBO7OqNN22ZQ7L2J_Ms1ZbNco0y5nky-Ocx2TzmRBGb0Tpx33oby1mvJ75syIcVWU2TqW2QQORpuZdzeEZidjDTllAvrarTgsxrAlbVBFYq4c8-Lz2npUPY3BzE_pczKp9FS9JZCwJLDNY-OWQ6xsF2Pi7hKK7dJKsbmdbASTt5-Mmar-xl0_qWU6rzi_taZ3_FXe4VYh8tCjiiGtby9XL58EMK6at623eIlgnCHrH2cyE2jtp1zyJyCPDFxqLsSTYHBxco_97bd6ldzUB11TLCFg6pvWctX1-CDKgB30F4A3gFYAChgIfmAdy0LRGy0_NdVwicT0PXUzUq28G3ChMWWOTdBbw61ta6XAZz9sD83rulpw9TCTMYWh1SH2YoXsLae66NFLlYQ=w377-h703-no?authuser=0"  width="350" title="Login">
+</p>
+
+<p>Во вкладке кинотеатры перечисляются все доступные кинотеатры сети.</p>
+
+<p align="center">
+  <img src="https://lh3.googleusercontent.com/sTWVGxNRY5_iVQyaduLUPeCbYoM3xGPdOX33nyGP3RmOyrTEXL6eK3sRak02qELBZ7-om4mUAOqrYgVC2xrgjN6WHbLQDKnWdeYuyVVE6_BhtBsHFzU84GYXHwBz3AbYGJ4XWUfsd4b_fEAPc3hy3cMGDMpz_pZCQ87pAPHssI02zCbIF_0637Ro3mXWrt-jbt7vX3jqKKNXLhJZ55abBMuCvQ1jHqvZMeplY3qcqpv8proYXnh_nd23sUYMcXRdFJqNep5KGDVGJcnm3EGq3tNM_I6nzgkOozKqeilMwDDPeujl6JPSS68pCHbeZNrT9d_mtwgpmTtfVZYSZZceWtVgGE4NsIHNjpUgY3W1_LyxJgN9XRVGMcHFvAs0lF3BsTU_mN9ECxd55vW7VMjfZ0istrwOiR1_wjO1ZkMd0V8JzjglNOaMx1npBWgh7KmjYHXB36J2JwK3xYrlo8kd77FXgPzyHAMfdLkPDdHjhP1oCxTp_BQ4xthVXVtqU1k2PKVfGIqRlIyA9t05tVxRyw4dqlYgvnggWqRhhOdxjuozRF0aGLnQzSNox8S03ZCBflAFwP5K8nKI-hnGbeZx99s3MaXYxguqMBjdgs61ETjvaes31JI6UQrXqSYC34raYrp3aQktYSwweHmW9gBFdbRAIzRhFPQ0V_oiceIgbDk7RDG5tDvW3puDNB5tOg=w375-h704-no?authuser=0"  width="350" title="Login">
+</p>
+
