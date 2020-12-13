@@ -18,7 +18,7 @@
 При запуске приложения будет происходить анимация и открытие окна авторизации.
 
 <p align="center">
-  <img src="https://lh3.googleusercontent.com/pw/ACtC-3fgm3XnoyuIvc7syedWTHNMld9eOrIqWk02lDw7TxshdrbJEhFx7Vd95VoLphhKGNJ1kJSIU3rSB7Yn-4oa0Kws6ikN48AGB3vKLXZprb6pGWA7zaCytH9TkUmMkQ3l8sLCIoX3xhLmu0PcJ2NL8eyO=w373-h705-no?authuser=0" width="350" title="Login">
+  <img src="https://lh3.googleusercontent.com/pw/ACtC-3fgm3XnoyuIvc7syedWTHNMld9eOrIqWk02lDw7TxshdrbJEhFx7Vd95VoLphhKGNJ1kJSIU3rSB7Yn-4oa0Kws6ikN48AGB3vKLXZprb6pGWA7zaCytH9TkUmMkQ3l8sLCIoX3xhLmu0PcJ2NL8eyO=w373-h705-no?authuser=0" width="250" title="Login">
 </p>
  
 <p>Через него будет осуществляться вход в приложение. Для авторизации требуется ввести логин и пароль. Имеется валидация логина и пароля. Для того чтобы просмотреть введенный пароль имеется ползунок "Показать пароль". Также имеется автоматический вход при нажатии на Checkbox "Не выходить". Для этого используется SharedPreferences, все данные хранятся в зашифрованном виде алгоритмом BlowFish. В случае успешной авторизации, в зависимости от роли, пользователь перейдет к окну, где отображается слайдер с доступными фильмами, менеджер, к окну менеджера. При нажатии на иконку приложения будет осуществлен вход под ролью Гость.</p>
@@ -32,7 +32,7 @@
  
 <p>Данные пользователя шифруются при помощи алгоритма BlowFish. Данные в базе данных будут выглядеть следующим образом:
 <p align="center">
-  <img src="https://lh3.googleusercontent.com/d_ZqM2j26ONIcQq6-Bu7hSTlws-0rY6mA-nrbrU5WY2ZhPaZeYvnmMzT2ni5V6f5Sj4W3fLn9_tMJ1lsbzO_3OHm7DuErnG2udGEcrEYY4-HwBlPNPpnlRYb8itJGMBBAqLIx953fWe-nxjnAAy8Sz0scoPAu-FRPzRsXuGa2l24ynPZMZqeJDOZnUkUOlphufJt-byIg-8NMSGe0e9qQTD1eC7jK2fb1vi5iRU74c8QT2tVtZ6Y9rBozVg_6rtkap6nrvJt6HHnCXFMkbRISbYY03dI9_4TgiqFW1quOPbK5BqRf0m6KDFJ9LBSBz27MuRTxtkZv6Bi9RZt9EioR3INZkx_1Oj4dCEkk6rPC8P49jxz9zGDxZ_o6WVkE2pkuwyyEh5GqIY5MPnxdp4FG9p19zYV7YRxtK4jHMYOrEnRtzkuWoFyeFc_X12SUNCmSSy2TEUykfoV4f4usMEtdOV-uITpX4auvIkbIW2r0EXfikWDuyDf098EKjQjk-SZUyYcLTrnLKw260qNNsMDwmcRKkfMDeKAMjFIHFXvskcSzrd_A_Rnx1kuBy56AKmJMhmOSIUyyTbo6zEreUTV0o5XxQopsT9-lqavccS51mD8u_GdgHBi7tMC-TCBjk3d7lYeNJx-6JtWBzLosWpLKLVovVK09VH6TeAigTBjJXX0campwRy_ZeYux3r5OQ=w544-h89-no?authuser=0" width="350" title="Login">
+  <img src="https://lh3.googleusercontent.com/d_ZqM2j26ONIcQq6-Bu7hSTlws-0rY6mA-nrbrU5WY2ZhPaZeYvnmMzT2ni5V6f5Sj4W3fLn9_tMJ1lsbzO_3OHm7DuErnG2udGEcrEYY4-HwBlPNPpnlRYb8itJGMBBAqLIx953fWe-nxjnAAy8Sz0scoPAu-FRPzRsXuGa2l24ynPZMZqeJDOZnUkUOlphufJt-byIg-8NMSGe0e9qQTD1eC7jK2fb1vi5iRU74c8QT2tVtZ6Y9rBozVg_6rtkap6nrvJt6HHnCXFMkbRISbYY03dI9_4TgiqFW1quOPbK5BqRf0m6KDFJ9LBSBz27MuRTxtkZv6Bi9RZt9EioR3INZkx_1Oj4dCEkk6rPC8P49jxz9zGDxZ_o6WVkE2pkuwyyEh5GqIY5MPnxdp4FG9p19zYV7YRxtK4jHMYOrEnRtzkuWoFyeFc_X12SUNCmSSy2TEUykfoV4f4usMEtdOV-uITpX4auvIkbIW2r0EXfikWDuyDf098EKjQjk-SZUyYcLTrnLKw260qNNsMDwmcRKkfMDeKAMjFIHFXvskcSzrd_A_Rnx1kuBy56AKmJMhmOSIUyyTbo6zEreUTV0o5XxQopsT9-lqavccS51mD8u_GdgHBi7tMC-TCBjk3d7lYeNJx-6JtWBzLosWpLKLVovVK09VH6TeAigTBjJXX0campwRy_ZeYux3r5OQ=w544-h89-no?authuser=0" width="250" title="Login">
 </p>
 
 <p> Приложение может осуществлять работу только при включенном интернет-соеденении, в случае отсутствия интернета будет отображаться окно, которое будет закрыто автоматически при появлении интернета. Для реализации этой функции использовался BroadcastReciever. </p>
