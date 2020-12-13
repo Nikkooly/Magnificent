@@ -2,8 +2,12 @@ package com.bstu.fit.yarmolik.cinema.Fragments;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -22,14 +26,23 @@ import java.util.Objects;
 public class FragmentMore extends Fragment {
 private Button buttonClose;
 private TextView outTextView;
+private ConstraintLayout constraintPhone;
+private final String phoneNumber = "375298522057";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_more, container, false);
-        buttonClose=view.findViewById(R.id.button5);
-        outTextView = view.findViewById(R.id.textView51);
+        init(view);
+        constraintPhone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               // Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + phoneNumber));
+                //startActivity(intent);
+            }
+        });
+
         outTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,6 +60,11 @@ private TextView outTextView;
             });
         }
         return view;
+    }
+    private void init(View view){
+        constraintPhone = view.findViewById(R.id.constraintPhoneMoreFragment);
+        buttonClose=view.findViewById(R.id.button5);
+        outTextView = view.findViewById(R.id.textView51);
     }
     private void finishApplicationWithCleanSharedPreferencesFile(){
         File file= new File("/data/data/com.bstu.fit.yarmolik.cinema/shared_prefs/user.xml");
