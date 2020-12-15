@@ -32,13 +32,13 @@
  
 <p>Данные пользователя шифруются при помощи алгоритма BlowFish. Данные в базе данных будут выглядеть следующим образом:
 <p align="center">
-  <img src="https://lh3.googleusercontent.com/d_ZqM2j26ONIcQq6-Bu7hSTlws-0rY6mA-nrbrU5WY2ZhPaZeYvnmMzT2ni5V6f5Sj4W3fLn9_tMJ1lsbzO_3OHm7DuErnG2udGEcrEYY4-HwBlPNPpnlRYb8itJGMBBAqLIx953fWe-nxjnAAy8Sz0scoPAu-FRPzRsXuGa2l24ynPZMZqeJDOZnUkUOlphufJt-byIg-8NMSGe0e9qQTD1eC7jK2fb1vi5iRU74c8QT2tVtZ6Y9rBozVg_6rtkap6nrvJt6HHnCXFMkbRISbYY03dI9_4TgiqFW1quOPbK5BqRf0m6KDFJ9LBSBz27MuRTxtkZv6Bi9RZt9EioR3INZkx_1Oj4dCEkk6rPC8P49jxz9zGDxZ_o6WVkE2pkuwyyEh5GqIY5MPnxdp4FG9p19zYV7YRxtK4jHMYOrEnRtzkuWoFyeFc_X12SUNCmSSy2TEUykfoV4f4usMEtdOV-uITpX4auvIkbIW2r0EXfikWDuyDf098EKjQjk-SZUyYcLTrnLKw260qNNsMDwmcRKkfMDeKAMjFIHFXvskcSzrd_A_Rnx1kuBy56AKmJMhmOSIUyyTbo6zEreUTV0o5XxQopsT9-lqavccS51mD8u_GdgHBi7tMC-TCBjk3d7lYeNJx-6JtWBzLosWpLKLVovVK09VH6TeAigTBjJXX0campwRy_ZeYux3r5OQ=w544-h89-no?authuser=0" width="250" title="Login">
+  <img src="https://3.downloader.disk.yandex.ru/preview/a9d0f10097200d2668d337b422ba93a206b80da8b47be5dce14c5b41cbb431ea/inf/h47M_1ZiEN2dZy2RB39F27itT7mt_pp_H5QVNBspqKKJvXxkhdZD71RGIkTIlMvcRQCX-s-Jof4Hix6zIpVaYA%3D%3D?uid=1081422136&filename=Screenshot_3.png&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=1081422136&tknv=v2&size=1838x907" width="250" title="Login">
 </p>
 
 <p> Приложение может осуществлять работу только при включенном интернет-соеденении, в случае отсутствия интернета будет отображаться окно, которое будет закрыто автоматически при появлении интернета. Для реализации этой функции использовался BroadcastReciever. </p>
  
 <p align="center">
-  <img src="https://lh3.googleusercontent.com/FRkxgE91YPhXIrhtCxjHST6A01JudDNIDZGN-v13otQz1rj5a4YwMZcPt1Re1r8gFDaZA7NFzmDjpQSL_b2FFTmE_hPRjSvjqOjvy6YJamDaKrRTDu7kxsGxcnOrZq2e1PveI-GRqmZIN8E6tt9i_JHZZ_D_xu-hpATbHTilb-sSu9UTz65t1VHyAVCYvV-zEyy31uJBW62_iyp4Yp-yFqnbdSIBd9kkjVrdx50ECpk5RRxm3je2MICLqb1_-4w1lDeVpH_6ldWGlcKNnK7dd9q8BdqdlnVP2Fp0tt0Z8D3ShOoyRYqvBgdvvgKjlsLtaYdV0InA4PJtnfvlM46JooxqYnPVOpP6r7Xp0EmcFE1ZA9vW3zHZMenFLmnkCy9vEyQAyRTjGGw2YU9Vu0iTpUa9TueEeqGrrvlbTBtatLrtXtQ953qteGjlEbKz6VobVQaDOvR4qOTIB8RnkXk74EVdTwbQMzSSuCp3Ksg-wtgivzPh_fedr_g05wF9Brt_AjntqufcLj4gfcZiMsn-ITng3sH9xmtVbcfjzmz90FOaiPe825iU7_4b_Zj0WcUvjplS9k2Ii4_XAs6AZiXAS70fYUFblxHRvYLDaXNPCrslQnIO2PADW2uDbFjWLr6llAMANC8niKhCJtQR9kQr8CC7JJwZRX-Cijk9wzQV_L54stfWdGdMC-gYfzcEbQ=w454-h908-no?authuser=0"  width="250" title="Login">
+  <img src="https://2.downloader.disk.yandex.ru/preview/858526fa1139fe2e75a4688bc4b28645e6cfb729790b74d695d12b76e0912abc/inf/vHJGt0zs0Drg8HPxo1bgYritT7mt_pp_H5QVNBspqKKgoVakotv2XbyyDVQYbkZYiskkTkZqv4b3CgG7_hQN1A%3D%3D?uid=1081422136&filename=Screenshot_4.png&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=1081422136&tknv=v2&size=1838x907"  width="250" title="Login">
 </p>
 
 <p>После успешной авторизации пользователь попадает на экран где он может просмотреть фильмы доступные в кинотеатре. При помощи PageViewer он может их перелистывать.</p>
