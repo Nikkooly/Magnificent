@@ -25,7 +25,7 @@
 <p>В окне авторизации, а также окне регистрации присутствует ограничение на невозможность создания скриншотов экрана. Если пользователь не зарегистрирован он может перейти к окну регистрации нажав на "У меня нет аккаунта".</p>
 
 <p align="center">
-  <img src="https://lh3.googleusercontent.com/jcjjABkWJT6xggZUJNpk0i9bLzZfdrSYNYSdxEXeA_J6L1lTXsiJ9hojRugLKwOh-Q4sGK01rUIHPp6f6_ajF1k5yiIH6WoP1X3sS88HVZGYzkKuPcfunmvunFHHizRor4aOdWw_hZcclIEn4PzsCOBewcZemcBXIzzai4jh6njqbdhR0ZCGTbiHpVChc9owPlZ-3vnC9QsOGs7XPyvTXR8S8BfarPe9V13Y1HUNtRg2tnZm67ctoFiwEzL6EPqSXqWI8ThjHqAgMHlz2q6w9dptmyjNfXINrEShSVdj1ciTIqqBXEtImi4o_lmc3Wnv_Ro_f2n18WJsT7u0rfc7uhNndoaLK255tvSZjmy6XhLMU22Zp6LXI5gyD9gPJ5Ux01xaKNeoVzH7FTUUEN9a0E3VycaiTZbfAoksAyh-s9pfQDhuInAUlU6SwJ23HfIoaNkN_TELO9emqo9eM9xvWeKP-ZbEgfKOcauZp4RhI7pv4oa9eJcara8GW_YNe8bB0Bx49u9WCiJrAlE36b3LspUWXLiC3L1MO_bhqvREvicWDbLACMyvc-87y_-gxh-xeqF41lW-6btcf41WFlr2r5q8POSwWRYmhXOkaVi-cdF5Rkgl9Qnx1Quj8dDcMlqF_4byqvTSSp5q6EdA6jk9VDYyWZMpTBIHmzN5U_EvXt1dS9eW2hYqDwIzLZkofw=w374-h705-no?authuser=0" width="250" title="Login">
+  <img src="https://yadi.sk/i/rv1WMrRARnQcoQ" width="250" title="Login">
 </p>
 
 <p> Через данное окно пользователь может осуществить регистрацию. Каждое из полей имеет валидацию. В случае успешного добавления будет осуществлен переход к окну авторизации. При возникновении ошибки пользователь будет уведомлен (К примеру если пользователь регистрирует аккаунт с логином, который уже существует, либо с почтой, которая уже существует.<p>
