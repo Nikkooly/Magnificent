@@ -46,13 +46,13 @@
 <p>После успешной авторизации пользователь попадает на экран где он может просмотреть фильмы доступные в кинотеатре. При помощи PageViewer он может их перелистывать.</p>
 
 <p align="center">
-  <img src="https://lh3.googleusercontent.com/s6IgBuCoSkEPiaRJgN2KXb66MfsAeUmFGe47r2NWV-mtwhWcuxJXzjNhDVzdVI_HgHjU7vYs_SS_r04mJbxzy_SozM6EX1zd3lX3pQ6bicU7ZYbFR3NDNTkny1SD9jPdMaTwR2TtxZ5hjU8XaxhyS-nq_1IMwKRkIxjIrCKQIUvNC6do2M7h93ZXRlLAAPlkybzGfP6fS4ZKw2bOdcX6Fq9rPKgrvQ3l5GHrxEcGUsgDUahj7j0iOvfkfh9El7YCGPgOPUIplX6h7ZowiI51Dt9yGdL5Nweoai9iztKZQ29IgnprwsmBO7OqNN22ZQ7L2J_Ms1ZbNco0y5nky-Ocx2TzmRBGb0Tpx33oby1mvJ75syIcVWU2TqW2QQORpuZdzeEZidjDTllAvrarTgsxrAlbVBFYq4c8-Lz2npUPY3BzE_pczKp9FS9JZCwJLDNY-OWQ6xsF2Pi7hKK7dJKsbmdbASTt5-Mmar-xl0_qWU6rzi_taZ3_FXe4VYh8tCjiiGtby9XL58EMK6at623eIlgnCHrH2cyE2jtp1zyJyCPDFxqLsSTYHBxco_97bd6ldzUB11TLCFg6pvWctX1-CDKgB30F4A3gFYAChgIfmAdy0LRGy0_NdVwicT0PXUzUq28G3ChMWWOTdBbw61ta6XAZz9sD83rulpw9TCTMYWh1SH2YoXsLae66NFLlYQ=w377-h703-no?authuser=0"  width="250" title="Login">
+  <img src="https://imageup.ru/img149/3687854/screenshot_5.jpg"  width="250" title="Login">
 </p>
 
 <p>Во вкладке кинотеатры перечисляются все доступные кинотеатры сети.</p>
 
 <p align="center">
-  <img src="https://lh3.googleusercontent.com/sTWVGxNRY5_iVQyaduLUPeCbYoM3xGPdOX33nyGP3RmOyrTEXL6eK3sRak02qELBZ7-om4mUAOqrYgVC2xrgjN6WHbLQDKnWdeYuyVVE6_BhtBsHFzU84GYXHwBz3AbYGJ4XWUfsd4b_fEAPc3hy3cMGDMpz_pZCQ87pAPHssI02zCbIF_0637Ro3mXWrt-jbt7vX3jqKKNXLhJZ55abBMuCvQ1jHqvZMeplY3qcqpv8proYXnh_nd23sUYMcXRdFJqNep5KGDVGJcnm3EGq3tNM_I6nzgkOozKqeilMwDDPeujl6JPSS68pCHbeZNrT9d_mtwgpmTtfVZYSZZceWtVgGE4NsIHNjpUgY3W1_LyxJgN9XRVGMcHFvAs0lF3BsTU_mN9ECxd55vW7VMjfZ0istrwOiR1_wjO1ZkMd0V8JzjglNOaMx1npBWgh7KmjYHXB36J2JwK3xYrlo8kd77FXgPzyHAMfdLkPDdHjhP1oCxTp_BQ4xthVXVtqU1k2PKVfGIqRlIyA9t05tVxRyw4dqlYgvnggWqRhhOdxjuozRF0aGLnQzSNox8S03ZCBflAFwP5K8nKI-hnGbeZx99s3MaXYxguqMBjdgs61ETjvaes31JI6UQrXqSYC34raYrp3aQktYSwweHmW9gBFdbRAIzRhFPQ0V_oiceIgbDk7RDG5tDvW3puDNB5tOg=w375-h704-no?authuser=0"  width="250" title="Login">
+  <img src="https://imageup.ru/img214/3687855/screenshot_6.jpg"  width="250" title="Login">
 </p>
 
 <p>Во вкладке билеты пользователь может видеть свои забронированные билеты (левый скриншот), в случае если пользователь не бронировал ни одного билета, либо зашел без авторизации под ролью Гость, будет отображаться окно (правый скриншот). После того, как сеанс закончится у пользователя будет возможность оставить отзыв к фильму.</p>
