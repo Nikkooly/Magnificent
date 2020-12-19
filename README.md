@@ -36,6 +36,7 @@
   <img src="https://3.downloader.disk.yandex.ru/preview/a9d0f10097200d2668d337b422ba93a206b80da8b47be5dce14c5b41cbb431ea/inf/h47M_1ZiEN2dZy2RB39F27itT7mt_pp_H5QVNBspqKKJvXxkhdZD71RGIkTIlMvcRQCX-s-Jof4Hix6zIpVaYA%3D%3D?uid=1081422136&filename=Screenshot_3.png&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=1081422136&tknv=v2&size=1838x907" width="250" title="Login">
 </p>
 
+
 <p> Приложение может осуществлять работу только при включенном интернет-соеденении, в случае отсутствия интернета будет отображаться окно, которое будет закрыто автоматически при появлении интернета. Для реализации этой функции использовался BroadcastReciever. </p>
  
 <p align="center">
