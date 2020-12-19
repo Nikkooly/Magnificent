@@ -33,7 +33,7 @@
 <p>Данные пользователя шифруются при помощи алгоритма BlowFish. Данные в базе данных будут выглядеть следующим образом:
   
 <p align="center">
-  <img src="https://3.downloader.disk.yandex.ru/preview/a9d0f10097200d2668d337b422ba93a206b80da8b47be5dce14c5b41cbb431ea/inf/h47M_1ZiEN2dZy2RB39F27itT7mt_pp_H5QVNBspqKKJvXxkhdZD71RGIkTIlMvcRQCX-s-Jof4Hix6zIpVaYA%3D%3D?uid=1081422136&filename=Screenshot_3.png&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=1081422136&tknv=v2&size=1838x907" width="250" title="Login">
+  <img src="https://imageup.ru/img37/3687852/screenshot_3.png" width="250" title="Login">
 </p>
 
 
