@@ -102,7 +102,7 @@
   <img src="https://imageup.ru/img26/3687870/screenshot_15.png"  width="250" title="Login">
 </p>
 
-<p>Во вкладке Фильм у менеджера есть функционал добавления/удаления/редактирования фильма.</p>
+<p>Во вкладке Фильм у менеджера есть функционал добавления/удаления/редактирования фильма. Необходимая валидация присутствует во всех вкладках функционала менеджера.</p>
 
 <p align="center">
   <img src="https://imageup.ru/img290/3687872/screenshot_16.png"  width="550" title="Login">
@@ -112,22 +112,22 @@
 <p>Во вкладке Кинотеатр у менеджера есть функционал добавления/удаления/редактирования кинотеатра, а также добавление/удаление залов.</p>
 
 <p align="center">
-  <img src="https://lh3.googleusercontent.com/ytV32Dahg63cCtg1_60RdNpvlgN1gs3cauwvDfDmTB0F2ISj4drqWWBYgGM2ROLucewREmc8k9RYwqIFGDHcS1K0276prXHGVsuq3x_pnfutTRnEkBrQeCIDYmwKo-fscltSZxNHZHxzhBYUaDeBShBtFQ5AttERlkT2gd2_mE4earXN_7rPCcBuLZcnebWZ9rAdcFmDrWQ7zdoWvMwEc-doCAWDEcSDiD2MgmH67oe3OpMOBfZxYpoVsSB7p8BYXF5K5hEvQ1BKvQahCq9z_E4Jwv3Dl3PTDIz90hLyYNfbmTSwewme9EnC8J5eMpUnsDdAA3sdMUJ34Kg56Erc9GcFB-fPVXgWmbKHt4Wvj8vhUxQHPJ6c-Orq7Gdu9TIaRMcJndNH3j5kFRysVjxqdSQ_e0Z4YAK9My-8wq4KLmkTIZzDyFhoPYQG6pFFJcHWQrJKaKGAkmmUrVaCXKamLn-RR9FIPp5368UziEfdWklrJyK18ELlfpBQj1Miq1AyhAd73PZB6b8hYl0DfqzeuCgSpwjmp-tk4YbC59bd60K6H0Ke2J14gMOZmR82J5axvjOr7J9bxGnDzysELF3qTV0_vdbpMBWw6wNrwHEx8DKm985UX6Mq9-jzbtqtwyKGZY5zudIOnnmYApjoFka_6M4lTMvC0cK_fPu-T79w_73iSesUJQeHMKDETW_8PA=w1134-h707-no?authuser=0"  width="550" title="Login">
+  <img src="https://imageup.ru/img246/3687873/screenshot_17.png"  width="550" title="Login">
 </p>
 <p align="center">
-  <img src="https://lh3.googleusercontent.com/oAIgjPm5xR7ThzMlj7x60XqiPWJXykqx4nBWUcElicD24_BMVfm6cpS2L8zkWx5gAsqpMuek7pjeJmIKkyBXahnizjRap6WQbPZkjn3rX7RIK1OPnkrcJCquzh9ImKCUeKjf9er2EZxz-rfeYOf7K8tCdRqMAR1P_r4NpyRKWv3y28v7cYas2i6ARRL4WA1yLxBbpwNFwyhXBb_hYuCUbH_9O8JOQ6Be5kWUJNu-AEtQkhuqwbmyLH5a-u52iqNptymznJLIaigqZB8Q4bhAVhYErQ4He46mqYQYPrHWcul0AnzLXbN7cQs-znC6LZFzFi-sZm2Ko5kT-XHWv51DCJb1sbit10GuHHq4izrk8wwgL27L-i6-HRS0bW1N4__NCEfY8Lz8H3b7xKMoi2rJdTJZHHlyeEjnge_vXF0XfBRcLnbQFXyFqQvAGkjIzEeI238l5w9CaT37g0kIn20x-srxfifbihHAqS4SxP0XyER0hvIOUR4Vgmn6EdH7hjVIEEGz8TJ1VosvPP0rk4_nM5dDYtv1mw_0JzKjJ1H6__aklWmK5AH0Zb4AGhfPFj5KjXWulHzE6w_kjzxhOGvoTQyP7jpqjwcnN3jFBK5-ld3IcqaFn1JpyBl5hv5nBzzsQQElxuLnDGkOoLtKuiwdxyF9vGauoDd3IB2_68Y1N4IRDa3DzH6bFXVKj9dhLw=w753-h705-no?authuser=0"  width="350" title="Login">
+  <img src="https://imageup.ru/img71/3687874/screenshot_18.png"  width="350" title="Login">
 </p>
 
 <p>Во вкладке Сеанс у менеджера есть функционал добавления сеанса. Он выбирает кинотеатр, зал и время сеанса. Добавить сеанс можно только на дату, которая идет после текущей.</p>
 
 <p align="center">
-  <img src="https://lh3.googleusercontent.com/rpRYdzgTVKtjkHCUESTTG14JQXDzVWBb2EOT3_o2hORvomkS-g00VtHSX42q1O3fAYRrh64Fk-OGbWEOh2vjmY1_8XqSy2maOMtdMImTJrogWVxlqAKBxHKvk1DAmv4z6Yv9GvYZmceQTti0ZZLa0Jj621SC3rxoZKPNQMyccmkLja3lu65L3J0NymBQ8bOfGZYEL6jCGRlL_k_TdnKfj46acW60ej21pw7BcYGZJiZJPKwqtcnNp0mq7_AmgsFdGihBwlKSDL9Y1YWYVWCnMKKPcf95qo58QZVb9Foiu2psrqy3jJitrBzdNTzOB8mGlqGU0kn8Ioo_meOyLgKCDk2k-gBeBXJakdY1Hh5RgQGRdx5Et6ehnHFz42kcfm59T0Tda0qGg5l06SedqPs3_FM1OfPjWvuCL4eKnBQAwZKzeBjEuvjndJDTW53ak2NjO0npAe1hbyPw6_vzXRYm_zNURzw4wCpDGRKR2QAHPdPYN9lfmN75U1E8BK95ReOBpX5wI28rv7NwTIpmfii2RyReHwnfNI5yQBzs7D4qFZuwhplOr2wYF8kgJN1tQ7UwPncaf3aaaz5Z-Khu2BzEJpu8o5fpasHvfNhsRnE7cmq19Ty60S3P4T_RBpzXkM5YOQq-I4fuLpD22veui83UZMbC_wPrlCGYsWH8kPBc1OnY6Av-M__gD4nyCRhEZw=w374-h703-no?authuser=0"  width="250" title="Login">
+  <img src="https://imageup.ru/img286/3687876/screenshot_19.png"  width="250" title="Login">
 </p>
 
-<p>Далее выбираем время и стоимость сеанса.</p>
+<p>Далее выбираем время и стоимость сеанса. Присутствует проверка времени сеанса, а именно менеджер не сможет добавить сеанс на время, на которое уже существет сеанса в данном кинотеатре и зале. Также при выборе начала сеанса система автоматически предложит время конца сеанса, которое менеджер может потвердить, либо откзаться и выбрать свое.</p>
 
 <p align="center">
-  <img src="https://lh3.googleusercontent.com/XjwU81d9xZRZ2xoz1r4Dk5OWycwaQLIKoOrZwk6oiLKQuhw2TUxPKJS8XBGodJkPepogOqVLSnKbUssTTAPnGEzUP4Yr4uoGv3ceFJBH_hx5iMsxClsmgsllnn3zM8Cg-jCrzlagcZjSSbZXZqN1RgdTKfpG-uczJFCrsjVLq9gl5JNnBy8AIcs2PO8xBxlpRDwEk-lNddnPl2VKuHnm_6X9udVvO6RSnqUWOPZ6KEWFqwfL4lvEK9pC_sNxT6TludmMWdmA4RwGV-QBaL2V_kQ06twoZiX3Bhjpd2akEQw03cgNifLljLlRCcmutVclNLtvCQmHxWzz86PSLt208frTZ4N09QjXm7RMn0TPFdM40U_Rod-tMtOMqx2S2hX2sBICjXc8q0BF441tUcQPKfBlYJURgDzvq-_wJnYRtq6oAMxo7OzFa2uBsMvm65QXcoRYDD6VCsg_KVt_aeJoux4egvmlav7FkiVEBAqmSWShNLNF0REqlPN4C8KYDUVcYbbk_IcKnW30nI8IvzaHdi4n5CjkkCdbTOK0nYre-ChPMMWVsoNPVALrqV-IjUGbeQ2dJ2bZT0M_Uo73Rlh-Iilagb2YEjV_xftYmZ5ahvEsfW3Qzcy0LAt-rhKNXbdsTBT_hdYrHp457YH2VTp2BCE73SpajcO1zr7Ex53UUX06XVakKTuuAonDVBKJeg=w378-h703-no?authuser=0"  width="250" title="Login">
+  <img src="https://imageup.ru/img186/3687878/screenshot_21.png"  width="250" title="Login">
 </p>
 
 
