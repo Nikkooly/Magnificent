@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\University\\4-1\\kursovoi\\Server\\Server\\Server.csproj": {}
+    "F:\\University\\4-1\\kursovoi\\kursovoi-v2\\Server\\Server\\Server.csproj": {}
   },
   "projects": {
-    "F:\\University\\4-1\\kursovoi\\Server\\Server\\Server.csproj": {
+    "F:\\University\\4-1\\kursovoi\\kursovoi-v2\\Server\\Server\\Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\University\\4-1\\kursovoi\\Server\\Server\\Server.csproj",
+        "projectUniqueName": "F:\\University\\4-1\\kursovoi\\kursovoi-v2\\Server\\Server\\Server.csproj",
         "projectName": "Server",
-        "projectPath": "F:\\University\\4-1\\kursovoi\\Server\\Server\\Server.csproj",
+        "projectPath": "F:\\University\\4-1\\kursovoi\\kursovoi-v2\\Server\\Server\\Server.csproj",
         "packagesPath": "C:\\Users\\Nikkooly\\.nuget\\packages\\",
-        "outputPath": "F:\\University\\4-1\\kursovoi\\Server\\Server\\obj\\",
+        "outputPath": "F:\\University\\4-1\\kursovoi\\kursovoi-v2\\Server\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Nikkooly\\AppData\\Roaming\\NuGet\\NuGet.Config",

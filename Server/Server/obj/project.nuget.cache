@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "O3jupmBh2DMZdDXmibjpIwQMocLoql/VchrG80JYbIDasJEILS20NpcG6RNftEhyyXJtlWRWJ3UAdw69I9ythQ==",
+  "dgSpecHash": "XFf27mfTk1syWBlAmK4cMr13erFZTss5Sfo8e0b2n+7ihEK2efwSpoLqItQ6A+s9NjDJ9wgmGCcIou4Tw1TY+Q==",
   "success": true,
-  "projectFilePath": "F:\\University\\4-1\\kursovoi\\Server\\Server\\Server.csproj",
+  "projectFilePath": "F:\\University\\4-1\\kursovoi\\kursovoi-v2\\Server\\Server\\Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nikkooly\\.nuget\\packages\\entityframework\\6.0.0\\entityframework.6.0.0.nupkg.sha512",
     "C:\\Users\\Nikkooly\\.nuget\\packages\\microsoft.aspnet.providers.core\\2.0.0\\microsoft.aspnet.providers.core.2.0.0.nupkg.sha512",
