@@ -40,7 +40,7 @@
 <p> Приложение может осуществлять работу только при включенном интернет-соеденении, в случае отсутствия интернета будет отображаться окно, которое будет закрыто автоматически при появлении интернета. Для реализации этой функции использовался BroadcastReciever. </p>
  
 <p align="center">
-  <img src="https://2.downloader.disk.yandex.ru/preview/858526fa1139fe2e75a4688bc4b28645e6cfb729790b74d695d12b76e0912abc/inf/vHJGt0zs0Drg8HPxo1bgYritT7mt_pp_H5QVNBspqKKgoVakotv2XbyyDVQYbkZYiskkTkZqv4b3CgG7_hQN1A%3D%3D?uid=1081422136&filename=Screenshot_4.png&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=1081422136&tknv=v2&size=1838x907"  width="250" title="Login">
+  <img src="https://drive.google.com/file/d/1Ux-MqNIZDJSVAkxj-1-EDl6G99SgOpbe/view?usp=sharing"  width="250" title="Login">
 </p>
 
 <p>После успешной авторизации пользователь попадает на экран где он может просмотреть фильмы доступные в кинотеатре. При помощи PageViewer он может их перелистывать.</p>
