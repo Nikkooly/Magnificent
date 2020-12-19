@@ -33,14 +33,14 @@
 <p>Данные пользователя шифруются при помощи алгоритма BlowFish. Данные в базе данных будут выглядеть следующим образом:
   
 <p align="center">
-  <img src="https://imageup.ru/img37/3687852/screenshot_3.png" width="250" title="Login">
+  <img src="https://imageup.ru/img37/3687852/screenshot_3.png" width="450" title="Login">
 </p>
 
 
 <p> Приложение может осуществлять работу только при включенном интернет-соеденении, в случае отсутствия интернета будет отображаться окно, которое будет закрыто автоматически при появлении интернета. Для реализации этой функции использовался BroadcastReciever. </p>
  
 <p align="center">
-  <img src="https://imageup.ru/img32/3687850/screenshot_4.png" width="450 title="Login">
+  <img src="https://imageup.ru/img32/3687850/screenshot_4.png" width="250 title="Login">
 </p>
 
 <p>После успешной авторизации пользователь попадает на экран где он может просмотреть фильмы доступные в кинотеатре. При помощи PageViewer он может их перелистывать.</p>
