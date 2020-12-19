@@ -58,13 +58,13 @@
 <p>Во вкладке билеты пользователь может видеть свои забронированные билеты (левый скриншот), в случае если пользователь не бронировал ни одного билета, либо зашел без авторизации под ролью Гость, будет отображаться окно (правый скриншот). После того, как сеанс закончится у пользователя будет возможность оставить отзыв к фильму.</p>
 
 <p align="center">
-  <img src="https://lh3.googleusercontent.com/Njf_X_lBpYdF5wEgv5z_wohfk-3HxWAoEA4wpF8Qxpj1k6paYlcPp821L0lBB3YbJ2OfQ4XM3mTzWOeh95HwnV9MWABgWpAvJbISf-GA6FcToG_K5ZAnfUvjIU1CL9f-Owe_NP7d_xp-xG1QXLd90zldtRVZj6KZpTHxFFZhmRoGDis9PhQBcVz0KCMpsC9aCkAZvrIEkz-zy3uHoUo23YXB4CjgBba3dmsntab7ziWb-CW_piqJ6AiDFZE6Kb790EJnarUm50k52aJOycxeiVoPl_4_hqFllPVXxA5JP9gkxbCNnyLTMUXFbdmrAo24EHaWjPzn3n-6pC8vcfpxLM-Ubgu0wkm_Ywgf23lDwlkJ8XvKODRa6Nug3zOWHHE00SHFgvi0Y_nbly2oLR8dZDILntuU3tSgq_3XSKh_I1QlrEloAFFe1Qd83MR6sRia6Bn-StMFS6e7WYKztQUb8LxwzqoDRoN13e7_Ikx5UxXxzTNOFV80RiFUAHZUGrG_y_BQRJC5EFsXf70tZvW8Mp0dWO5dA8AejhkFA57hxzzlwzpUN5fFwszCMlAm_cQapbA5yN8IRQ3IP7cHK8J5rg9LgULpLxaEt0Zg4R9hbymEOKQWNGsO585Vgh9LVbDza62o2nFqjzpU034fzTskoX-NfCepVnr-7ZkbyFnYHy_U8hYe6JUkGPwCJi_r_g=w752-h701-no?authuser=0"  width="350" title="Ndndnn">
+  <img src="https://imageup.ru/img109/3687857/screenshot_7.jpg"  width="350" title="Ndndnn">
 </p>
 
 <p>Во вкладке Еще отображается контактная информация, а также имеется кнопка выхода из приложения (у авторизированного пользователя дополнительно имеется кнопка выхода из аккаунта).</p>
 
 <p align="center">
-  <img src="https://lh3.googleusercontent.com/aulLTp4OTaGPpf-7r6AYmSesPvI-XixrZ6k6opWpr9Zh28KWxCsX-XYk17ZGz3fHIoFsagHWuzJmXFxqK1647vVYsrxzVIQI-qUzpT1jAjOtxH4BKElZbe28_oaZLV7GvQmBmxKka3wI2aSjzYQJF0XRrwpAFjYGfZwanqwIl0mI_tTvF8YP3IyLXHDcYGeCNxZDHhvA2LOyCylj1uy7PSAY2zubx33GE_yFmacIrxvQrMEQT3JGZDIkTNUZzdbrc_bB-Z1o3hIde9X0Sh1jZwnAXqs8KgTsS4gQWtgv_WXVFpfyinnU20aoY7nRvGfAnHytBO06doewsc0ldILex_O2YejsVm_fujoAIkMU1yRD6lzGafv4VZVErXCdqaoSuDhQ_qF0pLx6TRZyWY9jISHlKNogKoyHRV40MA42QzelfqqzIu4-5BTGPlLMjA36MrpDRlXWcPrdY7fgQnCMWRgP55MVdhbatQxQSM7IcOap3poiQ-cOKMrDSfoHkkP6RBvgpavJ0PbAk3noSelG20IVbAdiYwRsO0XtHM4tXJqGoKT2-HJYZeXnjUTfFcZeMzTvaNDxwy9KJaCRHCGWl9bBegFpFwr59WBuQNpFLk7TgY5zaNY2HVNtsEHgBql8Wqjw4w3XVhLJsE2Fe-bAfxCG65uAkT9SMc4ssSHQP4g1Vw0LA16lKcBVD-Piew=w375-h704-no?authuser=0"  width="250" title="Login">
+  <img src="https://imageup.ru/img155/3687859/screenshot_8.jpg"  width="250" title="Login">
 </p>
 
 <p>Во вкладке Фильмы отображаются фильмы, на которые есть, либо будет добавлен сеанс. Пользователь может пролистывать фильмы.</p>
