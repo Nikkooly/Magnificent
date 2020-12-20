@@ -25,7 +25,7 @@
 <p>В окне авторизации, а также окне регистрации присутствует ограничение на невозможность создания скриншотов экрана. Если пользователь не зарегистрирован он может перейти к окну регистрации нажав на "У меня нет аккаунта".</p>
 
 <p align="center">
-  <img src="https://downloader.disk.yandex.ru/preview/2a2ecdf20cfa6dda2b39d841cd6455cf2b28fe821f54d3db05038022f31a2196/5fd89d40/F1hgc3ny-t5NLNmF2x4je7itT7mt_pp_H5QVNBspqKJQQ9K-Mxw7pepg4wD0PHE67j6b4wiadK_dmVrr8Kfj3w%3D%3D?uid=0&filename=Screenshot_2.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v2&size=2048x2048" width="250" title="Login">
+  <img src="https://imageup.ru/img80/3688343/screenshot_2.png" width="250" title="Login">
 </p>
 
 <p> Через данное окно пользователь может осуществить регистрацию. Каждое из полей имеет валидацию. В случае успешного добавления будет осуществлен переход к окну авторизации. При возникновении ошибки пользователь будет уведомлен (К примеру если пользователь регистрирует аккаунт с логином, который уже существует, либо с почтой, которая уже существует.<p>
